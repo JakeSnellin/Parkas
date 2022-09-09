@@ -4,6 +4,8 @@ import { useMediaQuery } from "../Util/CustomHooks";
 import { getArtistUrls } from "../Util/Hygraph";
 import { HomeGallery } from "./HomeGallery";
 import { useEffect } from "react";
+import { Footer } from "./Footer";
+
 
 export function HomePage (props){
 
@@ -36,6 +38,7 @@ export function HomePage (props){
             {console.log(images)}
             <Header logo={props.logo}/>
             <HomeGallery images={images} isRowBased={isRowBased} isDesktop={isDesktop}/>
+            <Footer icon={props.icon}/>
         </div> 
     )
 }

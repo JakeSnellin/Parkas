@@ -6,16 +6,113 @@
     padding-top: calc(511 / 1536 * 100%);
 }
 
-/*.home-gallery-container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}*/
-
-/*.home-image-container{
-    padding-top: calc(9 / 6 * 100%);
+.icon-container{
+    width: 4rem;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    height: 2rem;
+}
+
+.artist-link{
+    display: block;
+    padding-top: calc(9 / 6 * 100%);
+}
+
+.close-button-container{
+    width: 2.5rem;
+    height: 2.5rem;
     background-size: cover;
-    width: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    margin: 5px 12px;
+}
+
+.bio-image-container{
+    z-index: 1000;
+    width: 100%;
+    padding-top: calc(3 / 4 * 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bio-background-top{
+    z-index: 0;
+    width: 100%;
+    padding-top: calc(2 / 3 * 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.discover-sticker{
+    width: 314px;
+    height: 324.27px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+}
+
+.discover-sticker-tablet{
+    right: 55px;
+    top: 513px;
+}
+
+.discover-sticker-desktop{
+    right: 170px;
+    top: 195px;
+}
+
+.title-desktop{
+    font-size: 160px;
+    color: black;
+}
+
+.title-tablet-white{
+    font-size: 84px;
+    color: white;
+}
+
+.title-mobile-white{
+    font-size: 46px;
+    color: white;
+}
+
+/*.bio-header-container{
+    width: 100%;
+    padding-top: calc(4 / 16 * 100%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
 }*/
+
+/*.bio-header-container{
+    max-width: 768px;
+    height: 6rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}*/
+
+/*.bio-image-container{
+    width: 100%;
+    padding-top: calc(4 / 16 * 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}*/
+
+@media only screen and (min-width: 500px) {
+    .close-button-container{
+        width: 3rem;
+        height: 3rem;
+    }
+  }
+
+.tablet-wrapper{
+    margin: 0 12px;
+}

@@ -23,6 +23,21 @@ export async function getLogo(onSuccess){
   onSuccess(data.homePage.logo.url);
 }
 
+export async function getIcon(onSuccess){
+  const query = gql`
+  query icon {
+    homePage(where: {id: "cl7q351fzdxi30bmmr89fa1kw"}) {
+    icon {
+      id
+      url
+    }
+  }
+}`
+
+  const data = await graphQLClient.request(query);
+  onSuccess(data.homePage.icon.url);
+}
+
 export async function getArtistUrls(sizeObj, onSuccess){
 
   const query = gql`
@@ -42,7 +57,6 @@ export async function getArtistUrls(sizeObj, onSuccess){
     url: artist.artistImage[0].url,
     slug: artist.slug
   })))
-  //onSuccess(data.artists.map(artist => artist.artistImage[0].url), data.artists.map(artist => artist.slug))
 }
 
 export async function getBio(slugObj, onSuccess){
@@ -74,3 +88,69 @@ export async function getBio(slugObj, onSuccess){
   const data = await graphQLClient.request(query, slugObj.variables);
   onSuccess(data);
 }
+
+export async function getCloseButton(onSuccess){
+  const query = gql`
+  query assets {
+    asset(where: {id: "cl7swsxxf05qn0cmn3qiasljt"}) {
+      id
+      url
+    }
+  }`
+
+  const data = await graphQLClient.request(query);
+  onSuccess(data.asset.url);
+}
+
+export async function getHeaderGraphic(onSuccess){
+  const query = gql`
+  query headerGraphics {
+    bioHeader (where: {id: "cl7t7laxq13oh0cmqobm6c0ze"}) {
+      headerGraphic{
+        url
+      }
+    }
+  }`
+
+  const data = await graphQLClient.request(query);
+  onSuccess(data.bioHeader.headerGraphic); //array of images
+}
+
+export async function getBioImages(slugObj, onSuccess){
+  const query = gql`
+  query bioImage ($slug: String!) {
+    bio (where: {slug: $slug}) {
+      bioImage {
+        url
+      }
+    }
+  }
+  `
+  const data = await graphQLClient.request(query, slugObj.variables);
+  onSuccess(data.bio.bioImage);
+}
+
+export async function getBioBackgroundTop(onSuccess){
+  const query = gql`
+  query bioBackgroundTop {
+    bioBackgroundTop (where: {id: "cl7ua3hm50sae0cjq0qkhsktj"}){
+      bioBackground{
+        url
+      }
+    }
+  }`
+  const data = await graphQLClient.request(query);
+  onSuccess(data.bioBackgroundTop.bioBackground);
+}
+
+export async function getDiscoverSticker(onSuccess){
+  const query = gql`
+  query sticker {
+    asset (where: {id: "cl7ucxz1p0v3q0dml9hkz5kzw"}){
+        url
+    }
+  }`
+
+  const data = await graphQLClient.request(query);
+  onSuccess(data.asset.url);
+} 

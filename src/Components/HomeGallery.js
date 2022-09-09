@@ -16,7 +16,6 @@ export function HomeGallery (props){
       const imageStyles = {
         container: (url) => ({
             backgroundImage: `url(${url})`,
-            paddingTop: 'calc(9 / 6 * 100%)',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
@@ -31,16 +30,10 @@ export function HomeGallery (props){
         })
       }
 
-    /*const homeImages = (
-        <ul>
-            {props.images}
-        </ul>
-    )*/
-
     return(
             <ul style={galleryStyles.container(props.isRowBased)}>
                     {props.images.map(({url, slug}, index)=>{
-                        return <div key={index} style={imageContainerStyles.container(props.isRowBased, props.isDesktop)}><li style={imageStyles.container(url)}><Link to={slug}></Link></li></div>
+                        return <div key={index} style={imageContainerStyles.container(props.isRowBased, props.isDesktop)}><li style={imageStyles.container(url)}><Link className="artist-link" to={slug}></Link></li></div>
                     })}
             </ul>
     )

@@ -2,6 +2,11 @@ import React, { useState, useRef } from "react";
 import { getBio } from '../Util/Hygraph';
 import { useEffect } from 'react';
 import { useHistory, useParams, Link } from "react-router-dom";
+import { BioHeader } from "./BioHeader";
+import { BioImage } from "./BioImage";
+import { useMediaQuery } from "../Util/CustomHooks";
+import { BioBackgroundTop } from "./BioBackgroundTop";
+import { DiscoverSticker } from "./DiscoverSticker";
 
 export function Bio (props){
 
@@ -22,8 +27,16 @@ export function Bio (props){
 
     return(
         <div>
-            <h1>Bio</h1>
-            {console.log(data)}
+            {console.log(data.artists[0].bio.name)}
+            <BioHeader closeButton={props.closeButton}/>
+            <BioImage slug={slug}/>
+            <DiscoverSticker />
+            <div>
+                <BioBackgroundTop name={data.artists[0].bio.name}/>
+            </div>
+            <div className="tablet-wrapper">
+                <h1>Bio</h1>
+            </div>
         </div>
     )
 }
