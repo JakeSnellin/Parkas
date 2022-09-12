@@ -3,6 +3,7 @@ import { useState } from "react";
 import { getBioBackgroundTop } from "../Util/Hygraph";
 import { useViewport } from "../Util/CustomHooks";
 import { BioTitle } from "./BioTitle";
+import { SocialMediaLinks } from "./SocialMediaLinks";
 
 export function BioBackgroundTop (props){
 
@@ -23,10 +24,30 @@ export function BioBackgroundTop (props){
     if(!bioBackground){
         return null;
     }
+    
+    const backgroundContainerStyles ={
+        container: (url) => ({
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            backgroundImage: `url(${url})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            width: '100%',
+            height: 'auto'
+        })
+    }
 
     return (
-        <div>
-        {width > desktopBreakpoint ? <BioTitle name={props.name}/> : width >= mobileBreakpoint ? <div className="bio-background-top" style={{backgroundImage:  `url(${bioBackground[0].url})`}}><BioTitle name={props.name}/></div> : <div className="bio-background-top" style={{backgroundImage: `url(${bioBackground[1].url})`}}><BioTitle name={props.name}/></div>}
+        <div style={width >= desktopBreakpoint ? null : width >= tabletBreakpoint ? backgroundContainerStyles.container(bioBackground[0].url) : backgroundContainerStyles.container(bioBackground[1].url)}>
+                
+            {width >= desktopBreakpoint ? <div><BioTitle name={props.name}/><SocialMediaLinks socialMediaLinks={props.socialMediaLinks}/></div> : 
+            
+            width >= mobileBreakpoint ? <div><BioTitle name={props.name}/><SocialMediaLinks socialMediaLinks={props.socialMediaLinks}/></div> :
+            
+            <div><BioTitle name={props.name}/><SocialMediaLinks socialMediaLinks={props.socialMediaLinks}/></div>}
+
         </div>
     )
 }

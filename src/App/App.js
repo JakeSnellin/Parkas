@@ -1,13 +1,11 @@
 
 import React, { useState, useRef } from "react";
 import { useEffect } from 'react';
-import ReactDOM from 'react-dom'
 import './Reset.css';
 import './App.css';
 import { HomePage } from '../Components/HomePage';
 import { Bio } from '../Components/Bio';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import { Header } from '../Components/Header';
 import { getIcon, getCloseButton, getLogo, getHeaderGraphic, getArtistUrls } from "../Util/Hygraph";
 import { ViewportProvider } from "../Util/CustomHooks";
 
@@ -37,12 +35,10 @@ if(!logo){
     <ViewportProvider>
     <div>
       <Router>
-        <div className='wrapper'>
           <Switch>
-            <Route path="/:slug"><Bio closeButton={closeButton} headerGraphics={headerGraphics}/></Route>
+            <Route path="/:slug"><Bio closeButton={closeButton} headerGraphics={headerGraphics} icon={icon}/></Route>
             <Route path="/"><HomePage logo={logo} icon={icon}/></Route>
           </Switch>
-        </div>
       </Router>
     </div>
     </ViewportProvider>

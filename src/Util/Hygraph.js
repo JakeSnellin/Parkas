@@ -38,24 +38,22 @@ export async function getIcon(onSuccess){
   onSuccess(data.homePage.icon.url);
 }
 
-export async function getArtistUrls(sizeObj, onSuccess){
+export async function getArtistUrls(onSuccess){
 
   const query = gql`
-  query artistImage ($size: String!) {
-    artists {
-      id
+  query artistUrls {
+    artists{
       slug
-      artistImage (where: {fileName_contains: $size}) {
-        id
+      artistImage{
         url
       }
     }
   }`
 
-  const data = await graphQLClient.request(query, sizeObj.variables);
+  const data = await graphQLClient.request(query);
   onSuccess(data.artists.map((artist) => ({
     url: artist.artistImage[0].url,
-    slug: artist.slug
+    slug: artist.slug,
   })))
 }
 
@@ -72,12 +70,12 @@ export async function getBio(slugObj, onSuccess){
        }
        artistDescription
        credits
+       quotes
        socialMediaLinks
-       quote
-       quoteSource
        galleryImage {
          id
          url
+         fileName
        }
        discoverLink
      }
@@ -115,6 +113,19 @@ export async function getHeaderGraphic(onSuccess){
   const data = await graphQLClient.request(query);
   onSuccess(data.bioHeader.headerGraphic); //array of images
 }
+
+export async function getEyesGraphic(onSuccess){
+  const query = gql`
+  query eyesGraphic {
+    asset (where: {id: "cl7ylshdb49pj0dmlqokls178"}){
+      url
+    }
+  }`
+
+  const data = await graphQLClient.request(query);
+  onSuccess(data.asset.url);
+}
+
 
 export async function getBioImages(slugObj, onSuccess){
   const query = gql`
@@ -154,3 +165,28 @@ export async function getDiscoverSticker(onSuccess){
   const data = await graphQLClient.request(query);
   onSuccess(data.asset.url);
 } 
+
+export async function getScrollSticker(onSuccess){
+  const query = gql`
+  query scrollSticker {
+    asset (where: {id: "cl7vrl0752e7n0cjqydvhlz0g"}) {
+       url
+   }
+ }`
+
+  const data = await graphQLClient.request(query);
+  onSuccess(data.asset.url);
+} 
+
+export async function getBackgroundGraphic(onSuccess){
+  const query = gql`
+  query backgroundGraphic {
+    asset (where: {id: "cl7vso0uq2ea10bmo9njydvts"}) {
+       url
+   }
+ }`
+
+  const data = await graphQLClient.request(query);
+  onSuccess(data.asset.url);
+} 
+

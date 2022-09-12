@@ -1,17 +1,18 @@
-import { faImages } from "@fortawesome/free-regular-svg-icons";
+
 import React from "react"
 import { Link } from 'react-router-dom';
+import { useViewport } from "../Util/CustomHooks";
+
 
 export function HomeGallery (props){
 
-    const galleryStyles = {
-        container: isRowBased => ({
-          display: 'flex',
-          flexDirection: isRowBased ? 'row' : 'column',
-          width: '100%',
-          flexWrap: 'wrap'
-        })
-      };
+    const { width } = useViewport();
+
+    const mobileBreakpoint = 576;
+
+    const tabletBreakpoint = 768;
+
+    const desktopBreakpoint = 1400;
 
       const imageStyles = {
         container: (url) => ({
@@ -24,16 +25,23 @@ export function HomeGallery (props){
       }
 
       const imageContainerStyles = {
-        container: (isRowBased, isDesktop) => ({
-            width: isDesktop ? '33.333%' : isRowBased ? '50%' : '100%',
+            width: width >= desktopBreakpoint ? '33.333%' : width >= tabletBreakpoint ? '50%' : '100%',
             height: '100%'
-        })
+      }
+
+
+      const galleryStyles = {
+        display: 'flex',
+        flexDirection: width <= mobileBreakpoint ? 'column' : 'row',
+        width: '100%',
+        flexWrap: 'wrap',
       }
 
     return(
-            <ul style={galleryStyles.container(props.isRowBased)}>
+        
+            <ul style={galleryStyles}>
                     {props.images.map(({url, slug}, index)=>{
-                        return <div key={index} style={imageContainerStyles.container(props.isRowBased, props.isDesktop)}><li style={imageStyles.container(url)}><Link className="artist-link" to={slug}></Link></li></div>
+                        return <div key={index} style={imageContainerStyles}><Link style={imageStyles.container(url)}className="artist-link" to={slug}></Link></div>
                     })}
             </ul>
     )

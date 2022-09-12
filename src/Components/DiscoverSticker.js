@@ -12,13 +12,9 @@ export function DiscoverSticker (props){
 
     const tabletBreakpoint = 768;
 
-    const desktopBreakpoint = 1200;
+    const desktopBreakpoint = 1400;
 
     const [sticker, setSticker] = useState('');
-
-    const tabletClasses = `discover-sticker-tablet discover-sticker`;
-
-    const desktopClasses = `discover-sticker-desktop discover-sticker`;
 
     useEffect(()=>{
         getDiscoverSticker(setSticker);
@@ -26,8 +22,7 @@ export function DiscoverSticker (props){
 
     return (
         <div>
-        {console.log(sticker)}
-        {width > tabletBreakpoint && width < desktopBreakpoint ? <div className={tabletClasses} style={{backgroundImage: `url(${sticker})`}}></div> : width >= desktopBreakpoint ? <div className={desktopClasses} style={{backgroundImage: `url(${sticker})`}}></div> : null}
+        {width >= desktopBreakpoint ? <div className= 'discover-sticker-desktop' style={{backgroundImage: `url(${sticker})`}}></div> : width >= tabletBreakpoint ? <div className='discover-sticker-tablet' style={{backgroundImage: `url(${sticker})`}}></div> : null}
         </div>
     )
 }

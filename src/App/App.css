@@ -1,9 +1,52 @@
+@font-face {
+    font-family:"roc-grotesk";
+    src:url("https://use.typekit.net/af/97dd77/00000000000000007735b7d4/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/97dd77/00000000000000007735b7d4/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/97dd77/00000000000000007735b7d4/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+    font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+    }
+
+@font-face {
+    font-family:"roc-grotesk-wide";
+    src:url("https://use.typekit.net/af/c9606e/00000000000000007735b7cd/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/c9606e/00000000000000007735b7cd/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/c9606e/00000000000000007735b7cd/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+    font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
+    }
+
+    body{
+        width: 100%;
+    }
+
+
+p {
+    font-family: 'roc-grotesk';
+    font-style: normal;
+    font-weight: 400;
+}
+
+h1, h2{
+    font-family: 'roc-grotesk-wide';
+    font-style: normal;
+    font-weight: 750;
+}
+
 .logo-container{
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding-top: calc(511 / 1536 * 100%);
+    padding-top: calc(2 / 10 * 100%);
+    margin-bottom: 20px;
+}
+
+.home-insta-icon-container{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 3rem;
+    width: 100%;
+}
+
+.insta-icon-home{
+    font-size: 2rem;
+    color: black;
 }
 
 .icon-container{
@@ -19,92 +62,185 @@
     padding-top: calc(9 / 6 * 100%);
 }
 
-.close-button-container{
+.close-button-container-desktop{
+    width: 5rem;
+    height: 5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    top: 55px;
+    left: 12px;
+    position: absolute;
+}
+
+.close-button-container-mobile{
     width: 2.5rem;
     height: 2.5rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: block;
-    margin: 5px 12px;
+    top: 105px;
+    left: 12px;
+    position: absolute;
+}
+
+.bio-header-flex-container{
+    width: 100%;
+    display: flex;
+}
+
+.bio-header-graphic-desktop{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: -50px;
+    z-index: 2;
+}
+
+.bio-header-graphic-mobile{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: -100px;
+    z-index: 2;
+}
+
+.app-outer-wrapper{
+    margin: 0 auto;
+    max-width: 1700px;
 }
 
 .bio-image-container{
-    z-index: 1000;
     width: 100%;
     padding-top: calc(3 / 4 * 100%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+    margin-top: -50px;
 }
 
-.bio-background-top{
-    z-index: 0;
-    width: 100%;
-    padding-top: calc(2 / 3 * 100%);
+.bio-image-desktop-container{
+    width: 1058px;
+    height: 794px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+    margin-top: -80px;
 }
 
-.discover-sticker{
-    width: 314px;
-    height: 324.27px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.flex-container{
+    display: flex;
+    width: 100%;
+}
+
+.aside{
+    width: 26.527%;
+}
+
+.bio-gallery-container img{
+    max-width: 100%;
+}
+
+.heading-container{
     position: absolute;
-}
-
-.discover-sticker-tablet{
-    right: 55px;
-    top: 513px;
+    top: 0;
+    left: 0;
 }
 
 .discover-sticker-desktop{
-    right: 170px;
-    top: 195px;
+    width: 297px;
+    height: 307px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 100px;
+    left: 953px;
+}
+
+.discover-sticker-tablet{
+    width: 297px;
+    height: 307px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 447px;
+    right: 55px;
+}
+
+.scroll-sticker{
+    width: 400px;
+    height: 276.6px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 560px;
+    left: 797px;
 }
 
 .title-desktop{
     font-size: 160px;
     color: black;
+    display: table-caption;
+    margin: 47px 20px 66px 20px;
+    width: 100%;
+    line-height: 79%;
 }
 
 .title-tablet-white{
     font-size: 84px;
     color: white;
+    display: table-caption;
+    margin: 178px 20px 32px 20px;
+    line-height: 79%;
 }
 
 .title-mobile-white{
     font-size: 46px;
     color: white;
+    display: table-caption;
+    margin: 36px 12px 22px 12px;
+    line-height: 79%;
 }
 
-/*.bio-header-container{
-    width: 100%;
-    padding-top: calc(4 / 16 * 100%);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-}*/
+.social-icon-desktop{
+    font-size: 70px;
+    color: black;
+    margin-right: 43px;
+}
 
-/*.bio-header-container{
-    max-width: 768px;
-    height: 6rem;
+.social-icon-tablet{
+    font-size: 50px;
+    color: white;
+    margin-right: 20px;
+}
+
+.social-icon-mobile{
+    font-size: 30px;
+    color: white;
+    margin-right: 20px;
+}
+
+.background-graphic{
+    width: 100%;
+    height: 600px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-}*/
-
-/*.bio-image-container{
-    width: 100%;
-    padding-top: calc(4 / 16 * 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}*/
+    margin-top: 100px;
+}
 
 @media only screen and (min-width: 500px) {
     .close-button-container{
@@ -112,7 +248,3 @@
         height: 3rem;
     }
   }
-
-.tablet-wrapper{
-    margin: 0 12px;
-}
