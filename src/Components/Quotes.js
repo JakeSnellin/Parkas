@@ -1,14 +1,9 @@
 import React from "react"
 import { useViewport } from "../Util/CustomHooks";
-import { useState } from "react";
 
 export function Quotes (props){
 
-    const [quotes, setQuotes] = useState(null);
-
     const { width } = useViewport();
-
-    const mobileBreakpoint = 576;
 
     const tabletBreakpoint = 768;
 

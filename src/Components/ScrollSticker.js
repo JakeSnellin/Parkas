@@ -6,10 +6,6 @@ import { useViewport } from "../Util/CustomHooks";
 
 export function ScrollSticker (props){
 
-    const mobileBreakpoint = 576;
-
-    const tabletBreakpoint = 768;
-
     const desktopBreakpoint = 1400;
 
     const { width } = useViewport();

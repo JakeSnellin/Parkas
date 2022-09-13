@@ -178,15 +178,14 @@ export async function getScrollSticker(onSuccess){
   onSuccess(data.asset.url);
 } 
 
-export async function getBackgroundGraphic(onSuccess){
+export async function getTabletGraphic(onSuccess){
   const query = gql`
-  query backgroundGraphic {
-    asset (where: {id: "cl7vso0uq2ea10bmo9njydvts"}) {
+  query tabletGraphic {
+    asset (where: {id: "cl7zcmwdo5l5y0dml30if31do"}) {
        url
    }
  }`
 
   const data = await graphQLClient.request(query);
   onSuccess(data.asset.url);
-} 
-
+}

@@ -12,6 +12,8 @@ export function SubHeader (props) {
     const subHeadingStyles = {
         fontSize: width >= desktopBreakpoint ? '30px' : width >= tabletBreakpoint ? '18px' : '14px',
         marginBottom: width >= desktopBreakpoint ? '31px' : width >= tabletBreakpoint ? '18px' : '16px',  
+        letterSpacing: '2%',
+        lineHeight: '79%'
     }
     
     return(

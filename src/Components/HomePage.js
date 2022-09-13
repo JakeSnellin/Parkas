@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Header } from './Header'
 import { getArtistUrls } from "../Util/Hygraph";
 import { HomeGallery } from "./HomeGallery";
@@ -28,7 +28,7 @@ export function HomePage (props){
     }
 
     return(
-            <div>
+            <div className="app-outer-wrapper">
                 <div style={innerWrapper}>
                     <Header logo={props.logo}/>
                 </div>

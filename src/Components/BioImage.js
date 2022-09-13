@@ -6,9 +6,6 @@ import { ScrollSticker } from "./ScrollSticker";
 
 export function BioImage (props){
 
-     // The width below which the mobile view should be rendered
-    const mobileBreakpoint = 576;
-
     const tabletBreakpoint = 768;
 
     const desktopBreakpoint = 1400;

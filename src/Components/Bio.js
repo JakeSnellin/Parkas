@@ -1,19 +1,18 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { getBio } from '../Util/Hygraph';
 import { useEffect } from 'react';
-import { useHistory, useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { BioHeader } from "./BioHeader";
 import { BioImage } from "./BioImage";
 import { BioBackgroundTop } from "./BioBackgroundTop";
-import { DiscoverSticker } from "./DiscoverSticker";
 import { About } from "./About";
 import { BioGallery } from "./BioGallery";
-import { BackgroundGraphic } from "./BackgroundGraphic";
 import { Quotes } from "./Quotes";
 import { useViewport } from "../Util/CustomHooks";
 import { Footer } from "./Footer";
 import { EyesGraphic } from "./EyesGraphic";
 import { Credits } from "./Credits";
+import { TabletGraphic } from "./TabletGraphic";
 
 export function Bio (props){
 
@@ -34,28 +33,28 @@ export function Bio (props){
 
     const tabletBreakpoint = 768;
 
-    const desktopBreakpoint = 1400;
-
     const innerWrapper = {
         margin: width <= mobileBreakpoint ? 'auto 12px' : width <= tabletBreakpoint ? 'auto 20px' : 'auto 30px'
     }
-
 
     if(!data){
         return null;
     }
     
-
     return(
-        <div>
+        <div className="app-outer-wrapper">
             <BioHeader closeButton={props.closeButton} headerGraphics={props.headerGraphics}/>
             <BioImage slug={slug}/>
             <BioBackgroundTop name={data.artists[0].bio.name} socialMediaLinks={data.artists[0].bio.socialMediaLinks}/>
             <div style={innerWrapper}>
                 <About description={data.artists[0].bio.artistDescription}/>
-                <BackgroundGraphic />
+            </div>
+            <TabletGraphic />
+            <div style={innerWrapper}>
                 <Quotes quotes={data.artists[0].bio.quotes}/>
+            </div>
                 <EyesGraphic />
+            <div style={innerWrapper}>
                 <Credits credits={data.artists[0].bio.credits}/>
                 <BioGallery galleryImages={data.artists[0].bio.galleryImage}/>
                 <Footer icon={props.icon}/>

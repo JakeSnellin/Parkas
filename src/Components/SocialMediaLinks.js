@@ -1,4 +1,4 @@
-import React, { useDeferredValue, useEffect, useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
@@ -8,8 +8,6 @@ import { useViewport } from "../Util/CustomHooks";
 export function SocialMediaLinks (props){
 
     const { width } = useViewport();
-
-    const mobileBreakpoint = 576;
 
     const tabletBreakpoint = 768;
 
@@ -22,7 +20,7 @@ export function SocialMediaLinks (props){
     const desktopClasses = 'social-icon-desktop';
 
     const socialLinksContainer = {
-        margin: width >= desktopBreakpoint ? '0 0 151px 20px' : width >= tabletBreakpoint ? '0 0 59px 20px' : '0 0 95px 12px'
+        margin: width >= desktopBreakpoint ? '0 0 0 20px' : width >= tabletBreakpoint ? '0 0 59px 20px' : '0 0 95px 12px'
     }
 
     const socialLinks = () => {

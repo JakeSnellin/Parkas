@@ -21,6 +21,7 @@ export function EyesGraphic(props){
             listStyle: 'none',
             width: '100%',
             height: '912px',
+            marginBottom: '150px'
         })
     }
 

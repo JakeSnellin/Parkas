@@ -1,26 +1,22 @@
 import React from "react";
 import { useViewport } from "../Util/CustomHooks";
-import { useEffect } from "react";
-import { useState } from "react";
 
 export function BioGallery (props){
 
     const { width } = useViewport();
 
-    const mobileBreakpoint = 576;
-
     const tabletBreakpoint = 768;
 
     const desktopBreakpoint = 1200;
 
-    /*const filterGalleryImages = (size) =>{
-        setImages(props.galleryImages.filter((image) =>{
-            return image.fileName.includes(size);
-        }))
-    }*/
+    const galleryContainerStyles = {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: width >= desktopBreakpoint ? '144px' : width >= tabletBreakpoint ? '100px' : '39px'
+    }
 
     return(
-        <div>
+        <div style={galleryContainerStyles}>
             {props.galleryImages.map((image, index)=>{
                 return <div key={index} className="bio-gallery-container"><img src={image.url}></img></div>
             })}

@@ -13,7 +13,7 @@ export function About (props){
     const aboutTextStyles = {
         width: width >= desktopBreakpoint ? '715px' : width >= tabletBreakpoint ? '366px' : '296px',
         fontSize: width >= desktopBreakpoint ? '36px' : width >= tabletBreakpoint ? '21px' : '18px',
-        lineHeight: width >= desktopBreakpoint ? '60px' : width >= tabletBreakpoint ? '32px': '24px',
+        lineHeight: width >= desktopBreakpoint ? '55px' : width >= tabletBreakpoint ? '32px': '24px',
         letterSpacing: '1px', 
         color: '#333333',
         marginBottom: '105px'
@@ -21,7 +21,7 @@ export function About (props){
 
     const aboutContainerStyles ={
         width: '100%',
-        marginTop: width >= desktopBreakpoint ? '151px' : width >= tabletBreakpoint ? '90px' : '70px'
+        marginTop: width >= desktopBreakpoint ? '131px' : width >= tabletBreakpoint ? '90px' : '70px'
     }
 
     return (

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 import { useViewport } from '../Util/CustomHooks';
 
@@ -8,11 +8,6 @@ export function Footer (props){
     const { width } = useViewport();
 
     const mobileBreakpoint = 576;
-
-    const tabletBreakpoint = 768;
-
-    const desktopBreakpoint = 1400;
-
 
       const galleryStyles = {
         display: 'flex',
@@ -41,9 +36,8 @@ export function Footer (props){
               <div style={iconPairStyles}>
                 <div className='icon-container' style={{backgroundImage: `url(${props.icon})`}}></div>
                     <div>
-                        <a href='#' style={linkStyles} target="_blank"><FontAwesomeIcon icon={ faTwitter }/></a>
-                        <a href='#' style={linkStyles} target="_blank"><FontAwesomeIcon icon={ faInstagram }/></a>
-                        <a href='#' style={linkStyles} target="_blank"><FontAwesomeIcon icon={ faFacebook }/></a>
+                        <a href='https://twitter.com/ParkasComedy' style={linkStyles} target="_blank"><FontAwesomeIcon icon={ faTwitter }/></a>
+                        <a href='https://instagram.com/ParkasComedy' style={linkStyles} target="_blank"><FontAwesomeIcon icon={ faInstagram }/></a>
                     </div>
                 </div>
                 <p>©2022 / Parkas / <br />

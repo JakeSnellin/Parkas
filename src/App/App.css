@@ -98,7 +98,7 @@ h1, h2{
     position: relative;
     width: 100%;
     height: 200px;
-    margin-top: -50px;
+    margin-top: -30px;
     z-index: 2;
 }
 
@@ -129,13 +129,14 @@ h1, h2{
 }
 
 .bio-image-desktop-container{
-    width: 1058px;
-    height: 794px;
+    width: 667px;
+    height: 501px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-    margin-top: -80px;
+    margin-top: 30px;
+    margin-left: 30px;
 }
 
 .flex-container{
@@ -158,14 +159,14 @@ h1, h2{
 }
 
 .discover-sticker-desktop{
-    width: 297px;
-    height: 307px;
+    width: 254px;
+    height: 263px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    top: 100px;
-    left: 953px;
+    top: -20px;
+    left: 600px;
 }
 
 .discover-sticker-tablet{
@@ -186,15 +187,15 @@ h1, h2{
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    top: 560px;
-    left: 797px;
+    top: 350px;
+    left: 600px;
 }
 
 .title-desktop{
     font-size: 160px;
     color: black;
     display: table-caption;
-    margin: 47px 20px 66px 20px;
+    margin: 47px 20px 32px 20px;
     width: 100%;
     line-height: 79%;
 }
@@ -216,30 +217,21 @@ h1, h2{
 }
 
 .social-icon-desktop{
-    font-size: 70px;
+    font-size: 3.75rem;
     color: black;
-    margin-right: 43px;
+    margin-right: 2.688rem;
 }
 
 .social-icon-tablet{
-    font-size: 50px;
+    font-size: 2.5rem;
     color: white;
-    margin-right: 20px;
+    margin-right: 1.25rem;
 }
 
 .social-icon-mobile{
     font-size: 30px;
     color: white;
     margin-right: 20px;
-}
-
-.background-graphic{
-    width: 100%;
-    height: 600px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 100px;
 }
 
 @media only screen and (min-width: 500px) {

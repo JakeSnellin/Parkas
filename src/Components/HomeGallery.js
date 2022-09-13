@@ -20,7 +20,7 @@ export function HomeGallery (props){
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            listStyle: 'none'
+            listStyle: 'none',
         })
       }
 
