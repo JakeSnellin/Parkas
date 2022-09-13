@@ -129,13 +129,14 @@ h1, h2{
 }
 
 .bio-image-desktop-container{
-    width: 667px;
-    height: 501px;
+    width: 969px;
+    height: 727px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
     margin-left: 30px;
+    margin-top: -50px;
 }
 
 .flex-container{
@@ -165,7 +166,8 @@ h1, h2{
     background-position: center;
     position: absolute;
     top: -20px;
-    left: 600px;
+    left: 854px;
+    z-index: 2;
 }
 
 .discover-sticker-tablet{
@@ -186,8 +188,8 @@ h1, h2{
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    top: 350px;
-    left: 600px;
+    top: 433px;
+    left: 700px;
 }
 
 .title-desktop{
