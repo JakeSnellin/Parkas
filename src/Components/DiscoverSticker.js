@@ -8,8 +8,6 @@ export function DiscoverSticker (props){
 
     const { width } = useViewport();
 
-    const tabletBreakpoint = 768;
-
     const desktopBreakpoint = 1400;
 
     const [sticker, setSticker] = useState('');
@@ -20,13 +18,27 @@ export function DiscoverSticker (props){
 
     const linkStyles = {
         display: 'block',
-        height: '297px',
-        width: '307px'
+        width: width >= desktopBreakpoint ? '229px' : '203.34px',
+        height: width >= desktopBreakpoint ? '236px' : '210.19px'
+    }
+
+     const discoverStickerStyles = {
+        backgroundImage: `url(${sticker})`,
+        width: width >= desktopBreakpoint ? '229px' : '203.34px',
+        height: width >= desktopBreakpoint ? '236px' : '210.19px',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        position: 'absolute',
+        transform: 'rotate(-60deg)',
+        top: width >= desktopBreakpoint ? '-20px' : '1200px',
+        right: width >= desktopBreakpoint ? '-60px' : '55px',
+        zIndex: '2'
     }
 
     return (
         <div>
-        {width >= desktopBreakpoint ? <div className= 'discover-sticker-desktop' style={{backgroundImage: `url(${sticker})`}}><a style={linkStyles} href="https://instagram.com/ParkasComedy" target="blank"></a></div> : width >= tabletBreakpoint ? <div className='discover-sticker-tablet' style={{backgroundImage: `url(${sticker})`}}><a style={linkStyles} href="https://instagram.com/ParkasComedy" target="blank"></a></div> : null}
+            {<div style={discoverStickerStyles}><a style={linkStyles} href="https://instagram.com/ParkasComedy" target="blank"></a></div>}
         </div>
     )
 }

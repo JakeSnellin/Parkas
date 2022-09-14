@@ -35,18 +35,15 @@ export function BioBackgroundTop (props){
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             width: '100%',
-            height: 'auto'
+            height: width >= tabletBreakpoint ? '512px' : '293px'
         })
     }
 
     return (
+
         <div style={width >= desktopBreakpoint ? null : width >= tabletBreakpoint ? backgroundContainerStyles.container(bioBackground[0].url) : backgroundContainerStyles.container(bioBackground[1].url)}>
-                
-            {width >= desktopBreakpoint ? <div><BioTitle name={props.name}/><SocialMediaLinks socialMediaLinks={props.socialMediaLinks}/></div> : 
             
-            width >= mobileBreakpoint ? <div><BioTitle name={props.name}/><SocialMediaLinks socialMediaLinks={props.socialMediaLinks}/></div> :
-            
-            <div><BioTitle name={props.name}/><SocialMediaLinks socialMediaLinks={props.socialMediaLinks}/></div>}
+            <div><BioTitle name={props.name}/><SocialMediaLinks socialMediaLinks={props.socialMediaLinks}/></div>
 
         </div>
     )

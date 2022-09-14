@@ -6,6 +6,8 @@ import { ScrollSticker } from "./ScrollSticker";
 
 export function BioImage (props){
 
+    const mobileBreakpoint = 576;
+
     const tabletBreakpoint = 768;
 
     const desktopBreakpoint = 1400;
@@ -25,11 +27,27 @@ export function BioImage (props){
         return null;
     }
 
-    /* If the viewport is more narrow than the breakpoint render the
-     mobile component, else render the desktop component */
+    const bioImageContainer = {
+        backgroundImage: width >= desktopBreakpoint ? `url(${images[2].url})` : width >= tabletBreakpoint ? `url(${images[1].url})` : `url(${images[0].url})`,
+        width: width >= desktopBreakpoint ? '805px' :  '100%',
+        height: width >= desktopBreakpoint ? '604px' : null,
+        paddingTop: width >= desktopBreakpoint ? null : 'calc(3 / 4 * 100%)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        position: 'relative',
+        marginLeft: width >= desktopBreakpoint ? '30px' : null
+    }
+
+    const imageFlexContainer = {
+            display: 'flex',
+            width: '100%'
+        }
+
     return (
-        <div className="flex-container">
-            {width >= desktopBreakpoint ?/* is desktop */ <div className="bio-image-desktop-container" style={{backgroundImage: `url(${images[2].url})`}}><DiscoverSticker /><ScrollSticker /></div> : width >= tabletBreakpoint ? /* is tablet */ <div className="bio-image-container" style={{backgroundImage: `url(${images[1].url})`}}><DiscoverSticker /><ScrollSticker /></div> : /* is mobile */ <div className="bio-image-container" style={{backgroundImage: `url(${images[0].url})`}}></div>}
+
+        <div style={imageFlexContainer}>
+            {width >= desktopBreakpoint ? <div style={bioImageContainer}><DiscoverSticker /><ScrollSticker /></div> : width >= tabletBreakpoint ? <div style={bioImageContainer}><DiscoverSticker /></div> : <div style={bioImageContainer}></div>}
         </div>
     )
 }

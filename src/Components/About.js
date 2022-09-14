@@ -11,11 +11,11 @@ export function About (props){
     const { width } = useViewport();
 
     const aboutTextStyles = {
-        width: width >= desktopBreakpoint ? '715px' : width >= tabletBreakpoint ? '366px' : '296px',
+        maxWidth: width >= desktopBreakpoint ? '715px' : width >= tabletBreakpoint ? '461px' : '100%',
         fontSize: width >= desktopBreakpoint ? '36px' : width >= tabletBreakpoint ? '21px' : '18px',
         lineHeight: width >= desktopBreakpoint ? '55px' : width >= tabletBreakpoint ? '32px': '24px',
         letterSpacing: '1px', 
-        color: '#333333',
+        color: '#000000',
         marginBottom: '105px'
     }
 

@@ -26,40 +26,22 @@ export function SocialMediaLinks (props){
     const socialLinksContainer = {
         display: 'flex',
         flexDirection: 'row',
-        gap: '1.625rem',
+        gap: width >= desktopBreakpoint ? '1.625rem' : '1.5rem',
         alignItems: 'center',
-        justifyContent: 'center',
-        margin: width >= desktopBreakpoint ? '0 0 0 20px' : width >= tabletBreakpoint ? '0 0 59px 20px' : '0 0 95px 12px',
+        justifyContent: width >= desktopBreakpoint ? 'center' : 'flex-start',
+        padding: width >= desktopBreakpoint ? null : '0 20px',
         backgroundImage: width > desktopBreakpoint ? `url(${background})` : null,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        width: '428px',
-        height: '197px'
+        width: width >= desktopBreakpoint ? '428px' : 'auto',
+        height: width >= desktopBreakpoint ? '197px' : '2.5rem'
     }
 
     const iconStyles = {
-        fontSize: width >= desktopBreakpoint ? '3rem' : null,
+        fontSize: width >= desktopBreakpoint ? '3rem' : width >= tabletBreakpoint ? '2.5rem' : '2rem',
         color: width >= desktopBreakpoint ? 'black' : 'white',
     }
-    
-    const socialIconTablet = {
-        fontSize: '2.5rem',
-        color: 'white',
-        marginRight: '1.25rem'
-    }
-    
-    const socialIconMobile = {
-        fontSize: '30px',
-        color: 'white',
-        marginRight: '20px'
-    }
-
-    const linksInnerContainer = {
-        transform: 'translate(-10deg)'
-    }
-
-
 
     const socialLinks = () => {
         if (props.socialMediaLinks.length > 0){
