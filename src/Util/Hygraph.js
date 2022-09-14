@@ -169,7 +169,7 @@ export async function getDiscoverSticker(onSuccess){
 export async function getScrollSticker(onSuccess){
   const query = gql`
   query scrollSticker {
-    asset (where: {id: "cl7vrl0752e7n0cjqydvhlz0g"}) {
+    asset (where: {id: "cl81rl0yy1oxh0blcbx1llqk0"}) {
        url
    }
  }`
@@ -189,3 +189,17 @@ export async function getTabletGraphic(onSuccess){
   const data = await graphQLClient.request(query);
   onSuccess(data.asset.url);
 }
+
+
+export async function getlinksBackground(onSuccess){
+  const query = gql`
+  query linksBackground {
+    asset (where: {id: "cl81ufwl11v620bmjc5mid9r6"}) {
+       url
+   }
+ }`
+
+  const data = await graphQLClient.request(query);
+  onSuccess(data.asset.url);
+}
+

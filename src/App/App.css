@@ -14,6 +14,10 @@
         width: 100%;
     }
 
+    * {
+        box-sizing: border-box;
+    }
+
 
 p {
     font-family: 'roc-grotesk';
@@ -69,8 +73,8 @@ h1, h2{
     background-repeat: no-repeat;
     background-position: center;
     display: block;
-    top: 55px;
-    left: 12px;
+    top: 21px;
+    left: 20px;
     position: absolute;
 }
 
@@ -84,11 +88,6 @@ h1, h2{
     top: 105px;
     left: 12px;
     position: absolute;
-}
-
-.bio-header-flex-container{
-    width: 100%;
-    display: flex;
 }
 
 .bio-header-graphic-desktop{
@@ -129,14 +128,13 @@ h1, h2{
 }
 
 .bio-image-desktop-container{
-    width: 969px;
-    height: 727px;
+    width: 805px;
+    height: 604px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
     margin-left: 30px;
-    margin-top: -50px;
 }
 
 .flex-container{
@@ -159,21 +157,22 @@ h1, h2{
 }
 
 .discover-sticker-desktop{
-    width: 254px;
-    height: 263px;
+    width: 229px;
+    height: 236px;
+    transform: rotate(-60deg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
     top: -20px;
-    left: 854px;
+    left: 667.75px;
     z-index: 2;
 }
 
 .discover-sticker-tablet{
     width: 297px;
     height: 307px;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
@@ -182,14 +181,14 @@ h1, h2{
 }
 
 .scroll-sticker{
-    width: 400px;
-    height: 276.6px;
-    background-size: cover;
+    width: 362px;
+    height: 250.27px;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    top: 433px;
-    left: 700px;
+    top: 390px;
+    left: 666px;
 }
 
 .title-desktop{
@@ -215,24 +214,6 @@ h1, h2{
     display: table-caption;
     margin: 36px 12px 22px 12px;
     line-height: 79%;
-}
-
-.social-icon-desktop{
-    font-size: 3.75rem;
-    color: black;
-    margin-right: 2.688rem;
-}
-
-.social-icon-tablet{
-    font-size: 2.5rem;
-    color: white;
-    margin-right: 1.25rem;
-}
-
-.social-icon-mobile{
-    font-size: 30px;
-    color: white;
-    margin-right: 20px;
 }
 
 @media only screen and (min-width: 500px) {
