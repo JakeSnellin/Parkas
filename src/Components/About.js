@@ -15,7 +15,7 @@ export function About (props){
         fontSize: width >= desktopBreakpoint ? '36px' : width >= tabletBreakpoint ? '21px' : '18px',
         lineHeight: width >= desktopBreakpoint ? '55px' : width >= tabletBreakpoint ? '32px': '24px',
         letterSpacing: '1px', 
-        color: '#000000',
+        color: '#333333',
         marginBottom: '105px'
     }
 

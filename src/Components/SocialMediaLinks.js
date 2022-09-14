@@ -40,7 +40,7 @@ export function SocialMediaLinks (props){
 
     const iconStyles = {
         fontSize: width >= desktopBreakpoint ? '3rem' : width >= tabletBreakpoint ? '2.5rem' : '2rem',
-        color: width >= desktopBreakpoint ? 'black' : 'white',
+        color: width >= desktopBreakpoint ? '#333333' : 'white',
     }
 
     const socialLinks = () => {

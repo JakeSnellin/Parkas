@@ -31,7 +31,6 @@ export function TabletGraphic (props){
 
     return (
         <div>
-            {console.log(background)}
             {width >= tabletBreakpoint && width < desktopBreakpoint ? <div style={imageStyles.container(background)}></div> : null}
         </div>
     )   
