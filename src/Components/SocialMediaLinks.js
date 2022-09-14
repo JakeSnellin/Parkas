@@ -60,7 +60,7 @@ export function SocialMediaLinks (props){
     }
 
     return (
-        <div style={socialLinksContainer}>
+        <div style={props.socialMediaLinks.length > 0 ? socialLinksContainer : null}>
                 {socialLinks()}
         </div>
     )
