@@ -43,7 +43,7 @@ export function Bio (props){
     
     return(
         <div className="app-outer-wrapper">
-            <BioHeader closeButton={props.closeButton} headerGraphics={props.headerGraphics}/>
+            <BioHeader closeButton={props.closeButton}/>
             <BioImage slug={slug}/>
             <BioBackgroundTop name={data.artists[0].bio.name} socialMediaLinks={data.artists[0].bio.socialMediaLinks}/>
             <div style={innerWrapper}>

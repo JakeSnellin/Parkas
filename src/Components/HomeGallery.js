@@ -1,6 +1,6 @@
-
+import { faRotate } from "@fortawesome/free-solid-svg-icons";
 import React from "react"
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { useViewport } from "../Util/CustomHooks";
 
 
@@ -14,35 +14,93 @@ export function HomeGallery (props){
 
     const desktopBreakpoint = 1400;
 
-      const imageStyles = {
-        container: (url) => ({
-            backgroundImage: `url(${url})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            listStyle: 'none',
-        })
-      }
+    const galleryStyles = {
+      display: 'flex',
+      flexDirection: width <= mobileBreakpoint ? 'column' : 'row',
+      width: '100%',
+      flexWrap: 'wrap',
+  }
 
-      const imageContainerStyles = {
-            width: width >= desktopBreakpoint ? '33.333%' : width >= tabletBreakpoint ? '50%' : '100%',
-            height: '100%'
-      }
+    const linkStyles = {
+      display: 'block',
+      width: width >= desktopBreakpoint ? '33.333%' : width >= tabletBreakpoint ? '50%' : '100%',
+      listStyle: 'none',
+    }
 
+    const aspectRatioBox = {
+        paddingTop: 'calc(9 / 6 * 100%)',
+        height: '0',
+        overflow: 'hidden',
+        position: 'relative'
+    }
 
-      const galleryStyles = {
-        display: 'flex',
-        flexDirection: width <= mobileBreakpoint ? 'column' : 'row',
-        width: '100%',
-        flexWrap: 'wrap',
+    const aspectRatioBoxInsideStyles = {
+      container: (url) => ({
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      width: '100%',
+      height: '100%',
+      backgroundImage: `url(${url})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      })
+    }
+
+    const getLabelVariableStyles = (url) =>{
+
+      switch(url){
+        case "https://media.graphassets.com/GLoVQlOVTVuLbm2ozxED":
+          return {paddingTop: 'calc(1 / 2.12 * 100%)', width: '51%', top: '35%', right: '35%', transform: 'rotate(6.43deg)'}
+         
+        case "https://media.graphassets.com/sCh9lnvCQmGifsQG9VNx":
+          return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '73%', top: '43%', right: '15%', transform: 'rotate(-3.52deg)'}
+
+        case "https://media.graphassets.com/PjSn4BjqRtCVLTZS2b1g":
+          return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '51%', top: '35%', right: '30%', transform: 'rotate(8.39deg)'}
+
+        case "https://media.graphassets.com/xgiGpwXSVWrXr2zclQeg":
+          return {paddingTop: 'calc(1 / 2.23 * 100%)', width: '59%', top: '32%', right: '15%', transform: 'rotate(0deg)'}
       }
+    }
+
+    const labelStyles = {
+      container: (url) => ({
+      backgroundImage: `url(${url})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: 'contain',
+      position: 'absolute',
+      overflow: 'hidden',
+      right: '9%',
+      bottom: '5%',
+      height: '0',
+      paddingTop: getLabelVariableStyles(url).paddingTop,
+      width: getLabelVariableStyles(url).width
+      })
+    }
+
+    const textStyles = {
+      container: (url) => ({
+      position: 'absolute',
+      top: getLabelVariableStyles(url).top,
+      right: getLabelVariableStyles(url).right,
+      transform: getLabelVariableStyles(url).transform,
+      color: 'black',
+      fontFamily: 'flood-std',
+      fontSize: width >= desktopBreakpoint ? '40px' : width >= tabletBreakpoint ? '3.8vw' : '7.8vw',
+      width: 'min-content',
+      overflow: 'visible',
+      })
+    }
 
     return(
-        
-            <ul style={galleryStyles}>
-                    {props.images.map(({url, slug}, index)=>{
-                        return <div key={index} style={imageContainerStyles}><Link style={imageStyles.container(url)}className="artist-link" to={slug}></Link></div>
-                    })}
-            </ul>
+                    
+          <ul style={galleryStyles}>
+            {props.artists.map(({url, slug, nameLabel, name}, index) =>{
+              return <Link key={index} style={linkStyles} to={slug}><div style={aspectRatioBox}><div style={aspectRatioBoxInsideStyles.container(url)}></div><div style={labelStyles.container(nameLabel)}><p style={textStyles.container(nameLabel)}>{name}</p></div></div></Link>
+            })}
+          </ul>
     )
 }

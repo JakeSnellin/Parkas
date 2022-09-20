@@ -38,12 +38,30 @@ export async function getIcon(onSuccess){
   onSuccess(data.homePage.icon.url);
 }
 
-export async function getArtistUrls(onSuccess){
+export async function getNameLabels(onSuccess){
+  const query = gql`
+  query nameLabels {
+    homePage (where: {id: "cl7q351fzdxi30bmmr89fa1kw"}){
+      nameLabels{
+        url
+      }
+    }
+  }`
+
+  const data = await graphQLClient.request(query);
+  onSuccess(data.homePage.nameLabels);
+}
+
+export async function getArtist(onSuccess){
 
   const query = gql`
-  query artistUrls {
+  query artists {
     artists{
       slug
+      name
+      nameLabel {
+        url
+      }
       artistImage{
         url
       }
@@ -54,6 +72,8 @@ export async function getArtistUrls(onSuccess){
   onSuccess(data.artists.map((artist) => ({
     url: artist.artistImage[0].url,
     slug: artist.slug,
+    nameLabel: artist.nameLabel.url,
+    name: artist.name
   })))
 }
 
@@ -75,7 +95,6 @@ export async function getBio(slugObj, onSuccess){
        galleryImage {
          id
          url
-         fileName
        }
        discoverLink
      }
@@ -100,7 +119,7 @@ export async function getCloseButton(onSuccess){
   onSuccess(data.asset.url);
 }
 
-export async function getHeaderGraphic(onSuccess){
+/*export async function getHeaderGraphic(onSuccess){
   const query = gql`
   query headerGraphics {
     bioHeader (where: {id: "cl7t7laxq13oh0cmqobm6c0ze"}) {
@@ -112,7 +131,7 @@ export async function getHeaderGraphic(onSuccess){
 
   const data = await graphQLClient.request(query);
   onSuccess(data.bioHeader.headerGraphic); //array of images
-}
+}*/
 
 export async function getEyesGraphic(onSuccess){
   const query = gql`

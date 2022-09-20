@@ -3,7 +3,7 @@ import React from "react"
 import { useViewport } from "../Util/CustomHooks";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { TabletGraphic } from "./TabletGraphic";
+
 
 export function BioHeader (props){
 

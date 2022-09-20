@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Header } from './Header'
-import { getArtistUrls } from "../Util/Hygraph";
+import { getArtist } from "../Util/Hygraph";
 import { HomeGallery } from "./HomeGallery";
 import { useEffect } from "react";
 import { useViewport } from "../Util/CustomHooks";
@@ -9,10 +9,10 @@ import { Footer } from "./Footer";
 
 export function HomePage (props){
 
-    const [images, setImages] = useState(null);
+    const [artists, setArtists] = useState(null); //array of artist object with url, slug and name label
 
     useEffect(()=>{
-        getArtistUrls(setImages);
+        getArtist(setArtists);
     },[])
 
     const { width } = useViewport();
@@ -23,7 +23,7 @@ export function HomePage (props){
         margin: width <= mobileBreakpoint ? 'auto 12px' : 'auto 20px'
     }
 
-    if(!images){
+    if(!artists){
         return null;
     }
 
@@ -32,7 +32,7 @@ export function HomePage (props){
                 <div style={innerWrapper}>
                     <Header logo={props.logo}/>
                 </div>
-                    <HomeGallery images={images}/>
+                    <HomeGallery artists={artists}/>
                 <div style={innerWrapper}>
                     <Footer icon={props.icon}/>
                 </div>

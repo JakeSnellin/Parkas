@@ -6,7 +6,7 @@ import './App.css';
 import { HomePage } from '../Components/HomePage';
 import { Bio } from '../Components/Bio';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import { getIcon, getCloseButton, getLogo, getHeaderGraphic, getArtistUrls } from "../Util/Hygraph";
+import { getIcon, getCloseButton, getLogo } from "../Util/Hygraph";
 import { ViewportProvider } from "../Util/CustomHooks";
 
 
@@ -18,13 +18,13 @@ function App() {
   
   const [closeButton, setCloseButton] = useState(''); //change this to an array of assets?
 
-  const [headerGraphics, setHeaderGraphics] = useState([]);
+  //const [headerGraphics, setHeaderGraphics] = useState([]);
 
   useEffect(() =>{
     getLogo(setLogo);
     getIcon(setIcon);
     getCloseButton(setCloseButton);
-    getHeaderGraphic(setHeaderGraphics);
+    //getHeaderGraphic(setHeaderGraphics);
   },[])
 
 if(!logo){
@@ -36,7 +36,7 @@ if(!logo){
     <div>
       <Router>
           <Switch>
-            <Route path="/:slug"><Bio closeButton={closeButton} headerGraphics={headerGraphics} icon={icon}/></Route>
+            <Route path="/:slug"><Bio closeButton={closeButton} icon={icon}/></Route>
             <Route path="/"><HomePage logo={logo} icon={icon}/></Route>
           </Switch>
       </Router>
