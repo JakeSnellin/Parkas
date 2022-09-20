@@ -18,7 +18,7 @@ export function BioGallery (props){
     return(
         <div style={galleryContainerStyles}>
             {props.galleryImages.map((image, index)=>{
-                return <div key={index} className="bio-gallery-container"><img src={image.url}></img></div>
+                return <div key={index} className="bio-gallery-container"><img src={image.url} alt='gallery image'></img></div>
             })}
         </div>
     )

@@ -4,7 +4,7 @@ import { useViewport } from "../Util/CustomHooks";
 import { useState } from "react";
 import {useEffect} from "react";
 
-export function TabletGraphic (props){
+export function TabletGraphic (){
 
     const tabletBreakpoint = 768;
 
