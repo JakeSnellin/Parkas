@@ -52,7 +52,7 @@ export function HomeGallery (props){
 
       switch(url){
         case "https://media.graphassets.com/GLoVQlOVTVuLbm2ozxED":
-          return {paddingTop: 'calc(1 / 2.12 * 100%)', width: '51%', top: '35%', right: '35%', transform: 'rotate(6.43deg)'}
+          return {paddingTop: 'calc(1 / 2.12 * 100%)', width: '51%', top: '33%', right: '35%', transform: 'rotate(6.43deg)'}
          
         case "https://media.graphassets.com/sCh9lnvCQmGifsQG9VNx":
           return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '73%', top: '43%', right: '15%', transform: 'rotate(-3.52deg)'}
@@ -61,7 +61,7 @@ export function HomeGallery (props){
           return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '51%', top: '35%', right: '30%', transform: 'rotate(8.39deg)'}
 
         case "https://media.graphassets.com/xgiGpwXSVWrXr2zclQeg":
-          return {paddingTop: 'calc(1 / 2.23 * 100%)', width: '59%', top: '32%', right: '15%', transform: 'rotate(0deg)'}
+          return {paddingTop: 'calc(1 / 2.23 * 100%)', width: '59%', top: '32%', right: '13%', transform: 'rotate(0deg)'}
       }
     }
 
