@@ -16,7 +16,7 @@ export function About (props){
         lineHeight: width >= desktopBreakpoint ? '55px' : width >= tabletBreakpoint ? '32px': '24px',
         letterSpacing: '1px', 
         color: '#333333',
-        marginBottom: '105px'
+        marginBottom: '100px'
     }
 
     const aboutContainerStyles ={

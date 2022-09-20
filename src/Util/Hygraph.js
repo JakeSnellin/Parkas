@@ -70,7 +70,7 @@ export async function getArtist(onSuccess){
 
   const data = await graphQLClient.request(query);
   onSuccess(data.artists.map((artist) => ({
-    url: artist.artistImage[0].url,
+    images: artist.artistImage,
     slug: artist.slug,
     nameLabel: artist.nameLabel.url,
     name: artist.name

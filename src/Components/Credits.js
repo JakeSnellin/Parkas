@@ -16,7 +16,7 @@ export function Credits (props){
         lineHeight: width >= desktopBreakpoint ? '55px' : width >= tabletBreakpoint ? '27px': '26px',
         letterSpacing: '1px', 
         color: '#333333',
-        marginBottom: '150px'
+        marginBottom: '100px'
     }
 
     return (

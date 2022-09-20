@@ -15,20 +15,20 @@ export function Quotes (props){
         fontFamily: 'roc-grotesk',
         fontStyle: 'normal',
         fontWeight: '750', 
-        marginBottom: '46px'
+        marginBottom: '29px'
     }
 
     const sourceStyle = {
         width: width >= desktopBreakpoint ? '625px' : width >= tabletBreakpoint ? '555px' : '100%',
-        fontSize: width >= desktopBreakpoint ? '34px' : width >= tabletBreakpoint ? '24px' : '20px',
+        fontSize: width >= desktopBreakpoint ? '32px' : width >= tabletBreakpoint ? '22px' : '18px',
         fontFamily: 'roc-grotesk',
         fontStyle: 'normal',
         fontWeight: '400',
-        marginBottom: '110px'
+        marginBottom: '72px'
     }
 
     const quoteContainer = {
-        margin: '150px 0'
+        margin: '100px 0'
     }
 
     return(

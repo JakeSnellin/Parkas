@@ -98,8 +98,8 @@ export function HomeGallery (props){
     return(
                     
           <ul style={galleryStyles}>
-            {props.artists.map(({url, slug, nameLabel, name}, index) =>{
-              return <Link key={index} style={linkStyles} to={slug}><div style={aspectRatioBox}><div style={aspectRatioBoxInsideStyles.container(url)}></div><div style={labelStyles.container(nameLabel)}><p style={textStyles.container(nameLabel)}>{name}</p></div></div></Link>
+            {props.artists.map(({images, slug, nameLabel, name}, index) =>{
+              return <Link key={index} style={linkStyles} to={slug}><div style={aspectRatioBox}><div style={width >= tabletBreakpoint ? aspectRatioBoxInsideStyles.container(images[0].url) : aspectRatioBoxInsideStyles.container(images[1].url)}></div><div style={labelStyles.container(nameLabel)}><p style={textStyles.container(nameLabel)}>{name}</p></div></div></Link>
             })}
           </ul>
     )
