@@ -52,16 +52,16 @@ export function HomeGallery (props){
 
       switch(url){
         case "https://media.graphassets.com/GLoVQlOVTVuLbm2ozxED":
-          return {paddingTop: 'calc(1 / 2.12 * 100%)', width: '51%', top: '50%', right: '35%', transform: 'rotate(6.43deg)'}
+          return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '51%', top: '62%', right: '35%', transform: 'rotate(6.43deg)'}
          
         case "https://media.graphassets.com/sCh9lnvCQmGifsQG9VNx":
-          return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '80%', top: '60%', right: '15%', transform: 'rotate(-3.52deg)'}
+          return {paddingTop: 'calc(1 / 2.23 * 100%)', width: '80%', top: '50%', right: '15%', transform: 'rotate(-3.52deg)'}
 
         case "https://media.graphassets.com/PjSn4BjqRtCVLTZS2b1g":
           return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '51%', top: '58%', right: '30%', transform: 'rotate(8.39deg)'}
 
         case "https://media.graphassets.com/xgiGpwXSVWrXr2zclQeg":
-          return {paddingTop: 'calc(1 / 2.23 * 100%)', width: '59%', top: '50%', right: '13%', transform: 'rotate(0deg)'}
+          return {paddingTop: 'calc(1 / 2.12 * 100%)', width: '59%', top: '50%', right: '13%', transform: 'rotate(0deg)'}
       }
     }
 
@@ -97,10 +97,10 @@ export function HomeGallery (props){
 
     return(
                     
-          <ul style={galleryStyles}>
-            {props.artists.map(({images, slug, nameLabel, name}, index) =>{
-              return <Link key={index} style={linkStyles} to={slug}><div style={aspectRatioBox}><div style={width >= tabletBreakpoint ? aspectRatioBoxInsideStyles.container(images[0].url) : aspectRatioBoxInsideStyles.container(images[1].url)}></div><div style={labelStyles.container(nameLabel)}><p style={textStyles.container(nameLabel)}>{name}</p></div></div></Link>
-            })}
-          </ul>
+        <ul style={galleryStyles}>
+          {props.artists.map(({images, slug, nameLabel, name}, index) =>{
+            return <Link key={index} style={linkStyles} to={slug}><div style={aspectRatioBox}><div style={width >= tabletBreakpoint ? aspectRatioBoxInsideStyles.container(images[0].url) : aspectRatioBoxInsideStyles.container(images[1].url)}></div><div style={labelStyles.container(nameLabel)}><p style={textStyles.container(nameLabel)}>{name}</p></div></div></Link>
+          })}
+        </ul>
     )
 }
