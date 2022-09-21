@@ -1,8 +1,8 @@
 import { faRotate } from "@fortawesome/free-solid-svg-icons";
-import React from "react"
+import React, { createRef } from "react"
 import { Link, Redirect } from 'react-router-dom';
 import { useViewport } from "../Util/CustomHooks";
-
+import { useEffect } from "react";
 
 export function HomeGallery (props){
 
@@ -95,11 +95,11 @@ export function HomeGallery (props){
       })
     }
 
-    return(
-                    
+
+    return(  
         <ul style={galleryStyles}>
           {props.artists.map(({images, slug, nameLabel, name}, index) =>{
-            return <Link key={index} style={linkStyles} to={slug}><div style={aspectRatioBox}><div style={width >= tabletBreakpoint ? aspectRatioBoxInsideStyles.container(images[0].url) : aspectRatioBoxInsideStyles.container(images[1].url)}></div><div style={labelStyles.container(nameLabel)}><p style={textStyles.container(nameLabel)}>{name}</p></div></div></Link>
+            return <Link key={index} style={linkStyles} to={slug}><div style={aspectRatioBox}><div className="effectHoverContainer"><div style={width >= tabletBreakpoint ? aspectRatioBoxInsideStyles.container(images[0].url) : aspectRatioBoxInsideStyles.container(images[1].url)}></div><div style={labelStyles.container(nameLabel)}><div id="effectContainer"></div><p style={textStyles.container(nameLabel)}>{name}</p></div></div></div></Link>
           })}
         </ul>
     )

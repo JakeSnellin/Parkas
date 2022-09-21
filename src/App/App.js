@@ -8,6 +8,7 @@ import { Bio } from '../Components/Bio';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { getIcon, getCloseButton, getLogo } from "../Util/Hygraph";
 import { ViewportProvider } from "../Util/CustomHooks";
+import lottie from "lottie-web";
 
 
 function App() {
