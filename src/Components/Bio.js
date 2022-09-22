@@ -13,7 +13,6 @@ import { Footer } from "./Footer";
 import { EyesGraphic } from "./EyesGraphic";
 import { Credits } from "./Credits";
 import { TabletGraphic } from "./TabletGraphic";
-import { getBioImages } from "../Util/Hygraph";
 
 export function Bio (props){
 
@@ -26,6 +25,11 @@ export function Bio (props){
             variables: {
                 slug: slug
             }},setData);
+    },[])
+
+    useEffect(()=>{
+        console.log('does this run?')
+        window.scrollTo(0, 0)
     },[])
 
     const { width } = useViewport();
