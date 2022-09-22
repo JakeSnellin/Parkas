@@ -24,6 +24,7 @@ export function BioImage (props){
     },[])
 
     if(!images){
+        console.log('no images')
         return null;
     }
 

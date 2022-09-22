@@ -13,6 +13,7 @@ import { Footer } from "./Footer";
 import { EyesGraphic } from "./EyesGraphic";
 import { Credits } from "./Credits";
 import { TabletGraphic } from "./TabletGraphic";
+import { CSSTransition } from "react-transition-group";
 
 export function Bio (props){
 
@@ -42,22 +43,24 @@ export function Bio (props){
     }
     
     return(
-        <div className="app-outer-wrapper">
-            <BioHeader closeButton={props.closeButton}/>
-            <BioImage slug={slug}/>
-            <BioBackgroundTop name={data.artists[0].bio.name} socialMediaLinks={data.artists[0].bio.socialMediaLinks}/>
-            <div style={innerWrapper}>
-                <About description={data.artists[0].bio.artistDescription}/>
-            </div>
-            <TabletGraphic />
-            <div style={innerWrapper}>
-                <Quotes quotes={data.artists[0].bio.quotes}/>
-            </div>
-                <EyesGraphic />
-            <div style={innerWrapper}>
-                <Credits credits={data.artists[0].bio.credits}/>
-                <BioGallery galleryImages={data.artists[0].bio.galleryImage}/>
-                <Footer icon={props.icon}/>
+        <div className="bio-container">
+            <div className="app-outer-wrapper">
+                <BioHeader closeButton={props.closeButton}/>
+                <BioImage slug={slug}/>
+                <BioBackgroundTop name={data.artists[0].bio.name} socialMediaLinks={data.artists[0].bio.socialMediaLinks}/>
+                <div style={innerWrapper}>
+                    <About description={data.artists[0].bio.artistDescription}/>
+                </div>
+                <TabletGraphic />
+                <div style={innerWrapper}>
+                    <Quotes quotes={data.artists[0].bio.quotes}/>
+                </div>
+                    <EyesGraphic />
+                <div style={innerWrapper}>
+                    <Credits credits={data.artists[0].bio.credits}/>
+                    <BioGallery galleryImages={data.artists[0].bio.galleryImage}/>
+                    <Footer icon={props.icon}/>
+                </div>
             </div>
         </div>
     )

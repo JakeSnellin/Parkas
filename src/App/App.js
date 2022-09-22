@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { getIcon, getCloseButton, getLogo } from "../Util/Hygraph";
 import { ViewportProvider } from "../Util/CustomHooks";
 import lottie from "lottie-web";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+
 
 
 function App() {
@@ -36,10 +38,20 @@ if(!logo){
     <ViewportProvider>
     <div>
       <Router>
-          <Switch>
-            <Route path="/:slug"><Bio closeButton={closeButton} icon={icon}/></Route>
-            <Route path="/"><HomePage logo={logo} icon={icon}/></Route>
-          </Switch>
+        <Route render={({location})=>(
+          <TransitionGroup>
+          <CSSTransition
+            key={location.key}
+            timeout={500}
+            classNames="fade"
+          >
+            <Switch location={location}>
+              <Route path="/:slug"><Bio closeButton={closeButton} icon={icon}/></Route>
+              <Route path="/"><HomePage logo={logo} icon={icon}/></Route>
+            </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        )}/>
       </Router>
     </div>
     </ViewportProvider>

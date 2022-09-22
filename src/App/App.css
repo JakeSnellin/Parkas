@@ -219,18 +219,31 @@ h1, h2{
     height: 25%;
 }
 
-/*.ball{
-    background-image: url('../animations/Assets/Ball.png');
+.fade-appear,
+.fade-enter{
+    opacity: 0;
+    z-index: 1;
+}
+
+.fade-appear-active, .fade-enter.fade-enter-active{
+    opacity: 1;
+    transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit{
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active{
+    opacity: 0;
+    transition: opacity 150ms linear;
+}
+
+.bio-container{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    margin: 0;
-    height: 60%;
-    width: 60%;
-}*/
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 
 
