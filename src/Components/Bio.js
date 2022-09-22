@@ -13,7 +13,7 @@ import { Footer } from "./Footer";
 import { EyesGraphic } from "./EyesGraphic";
 import { Credits } from "./Credits";
 import { TabletGraphic } from "./TabletGraphic";
-import { CSSTransition } from "react-transition-group";
+import { getBioImages } from "../Util/Hygraph";
 
 export function Bio (props){
 
@@ -46,7 +46,7 @@ export function Bio (props){
         <div className="bio-container">
             <div className="app-outer-wrapper">
                 <BioHeader closeButton={props.closeButton}/>
-                <BioImage slug={slug}/>
+                <BioImage images={data.artists[0].bio.bioImage}/>
                 <BioBackgroundTop name={data.artists[0].bio.name} socialMediaLinks={data.artists[0].bio.socialMediaLinks}/>
                 <div style={innerWrapper}>
                     <About description={data.artists[0].bio.artistDescription}/>

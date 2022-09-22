@@ -12,24 +12,24 @@ export function BioImage (props){
 
     const desktopBreakpoint = 1400;
 
-    const [images, setImages] = useState(null);
+    //const [images, setImages] = useState(null);
 
     const { width } = useViewport();
 
-    useEffect(()=>{
+    /*useEffect(()=>{
         getBioImages({
             variables: {
                 slug: props.slug
             }},setImages);
-    },[])
+    },[])*/
 
-    if(!images){
+    /*if(!images){
         console.log('no images')
         return null;
-    }
+    }*/
 
     const bioImageContainer = {
-        backgroundImage: width >= desktopBreakpoint ? `url(${images[2].url})` : width >= tabletBreakpoint ? `url(${images[1].url})` : `url(${images[0].url})`,
+        backgroundImage: width >= desktopBreakpoint ? `url(${props.images[2].url})` : width >= tabletBreakpoint ? `url(${props.images[1].url})` : `url(${props.images[0].url})`,
         width: width >= desktopBreakpoint ? '805px' :  '100%',
         height: width >= desktopBreakpoint ? '604px' : null,
         paddingTop: width >= desktopBreakpoint ? null : 'calc(3 / 4 * 100%)',

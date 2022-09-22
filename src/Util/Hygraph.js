@@ -146,7 +146,7 @@ export async function getEyesGraphic(onSuccess){
 }
 
 
-export async function getBioImages(slugObj, onSuccess){
+/*export async function getBioImages(slugObj, onSuccess){
   const query = gql`
   query bioImage ($slug: String!) {
     bio (where: {slug: $slug}) {
@@ -158,7 +158,7 @@ export async function getBioImages(slugObj, onSuccess){
   `
   const data = await graphQLClient.request(query, slugObj.variables);
   onSuccess(data.bio.bioImage);
-}
+}*/
 
 export async function getBioBackgroundTop(onSuccess){
   const query = gql`
