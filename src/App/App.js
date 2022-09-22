@@ -42,7 +42,7 @@ if(!logo){
           <TransitionGroup>
           <CSSTransition
             key={location.key}
-            timeout={500}
+            timeout={300}
             classNames="fade"
           >
             <Switch location={location}>
