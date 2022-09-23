@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Header } from './Header'
-import { getArtist } from "../Util/Hygraph";
+import { getArtists } from "../Util/Hygraph";
 import { HomeGallery } from "./HomeGallery";
 import { useEffect } from "react";
 import { useViewport } from "../Util/CustomHooks";
@@ -12,7 +12,7 @@ export function HomePage (props){
     const [artists, setArtists] = useState(null); //array of artist object with url, slug and name label
 
     useEffect(()=>{
-        getArtist(setArtists);
+        getArtists(setArtists);
     },[])
 
     const { width } = useViewport();

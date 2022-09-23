@@ -1,4 +1,4 @@
-import { request, gql, GraphQLClient } from 'graphql-request';
+import { gql, GraphQLClient } from 'graphql-request';
 
 const endpoint = 'https://api-eu-west-2.hygraph.com/v2/cl7oqf56l3imn01t734v4f3r6/master';
 
@@ -19,8 +19,13 @@ export async function getLogo(onSuccess){
     }
   }`
 
-  const data = await graphQLClient.request(query);
-  onSuccess(data.homePage.logo.url);
+  try{
+    const data = await graphQLClient.request(query);
+    if(!data.homePage.logo.url) throw 'logo empty';
+    onSuccess(data.homePage.logo.url);
+  }catch(error){
+    console.log(error + "A logo is required. Please add the content and try again.");
+  }
 }
 
 export async function getIcon(onSuccess){
@@ -33,12 +38,17 @@ export async function getIcon(onSuccess){
     }
   }
 }`
-
+try{
   const data = await graphQLClient.request(query);
+  if(!data.homePage.icon.url) throw 'icon empty';
   onSuccess(data.homePage.icon.url);
+}catch(error){
+  console.log(error + "An icon is required. Please add the content and try again.")
 }
 
-export async function getNameLabels(onSuccess){
+}
+
+/*export async function getNameLabels(onSuccess){
   const query = gql`
   query nameLabels {
     homePage (where: {id: "cl7q351fzdxi30bmmr89fa1kw"}){
@@ -47,12 +57,11 @@ export async function getNameLabels(onSuccess){
       }
     }
   }`
-
   const data = await graphQLClient.request(query);
   onSuccess(data.homePage.nameLabels);
-}
+}*/
 
-export async function getArtist(onSuccess){
+export async function getArtists(onSuccess){
 
   const query = gql`
   query artists {
@@ -61,6 +70,7 @@ export async function getArtist(onSuccess){
       name
       nameLabel {
         url
+        fileName
       }
       artistImage{
         url
@@ -70,10 +80,11 @@ export async function getArtist(onSuccess){
 
   const data = await graphQLClient.request(query);
   onSuccess(data.artists.map((artist) => ({
-    images: artist.artistImage,
+    artistImages: artist.artistImage,
     slug: artist.slug,
-    nameLabel: artist.nameLabel.url,
-    name: artist.name
+    nameLabel: artist.nameLabel[0].url,
+    name: artist.name,
+    fileName: artist.nameLabel[0].fileName
   })))
 }
 
@@ -101,7 +112,6 @@ export async function getBio(slugObj, onSuccess){
    }
  }
   `
-
   const data = await graphQLClient.request(query, slugObj.variables);
   onSuccess(data);
 }
@@ -119,20 +129,6 @@ export async function getCloseButton(onSuccess){
   onSuccess(data.asset.url);
 }
 
-/*export async function getHeaderGraphic(onSuccess){
-  const query = gql`
-  query headerGraphics {
-    bioHeader (where: {id: "cl7t7laxq13oh0cmqobm6c0ze"}) {
-      headerGraphic{
-        url
-      }
-    }
-  }`
-
-  const data = await graphQLClient.request(query);
-  onSuccess(data.bioHeader.headerGraphic); //array of images
-}*/
-
 export async function getEyesGraphic(onSuccess){
   const query = gql`
   query eyesGraphic {
@@ -144,21 +140,6 @@ export async function getEyesGraphic(onSuccess){
   const data = await graphQLClient.request(query);
   onSuccess(data.asset.url);
 }
-
-
-/*export async function getBioImages(slugObj, onSuccess){
-  const query = gql`
-  query bioImage ($slug: String!) {
-    bio (where: {slug: $slug}) {
-      bioImage {
-        url
-      }
-    }
-  }
-  `
-  const data = await graphQLClient.request(query, slugObj.variables);
-  onSuccess(data.bio.bioImage);
-}*/
 
 export async function getBioBackgroundTop(onSuccess){
   const query = gql`

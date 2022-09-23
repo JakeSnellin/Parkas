@@ -48,7 +48,7 @@ h1, h2{
 
 .home-insta-icon-container{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     height: 3rem;
     width: 100%;

@@ -28,7 +28,6 @@ export function Bio (props){
     },[])
 
     useEffect(()=>{
-        console.log('does this run?')
         window.scrollTo(0, 0)
     },[])
 

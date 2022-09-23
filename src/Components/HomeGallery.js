@@ -48,25 +48,25 @@ export function HomeGallery (props){
       })
     }
 
-    const getLabelVariableStyles = (url) =>{
+    const getLabelVariableStyles = (fileName) =>{
 
-      switch(url){
-        case "https://media.graphassets.com/GLoVQlOVTVuLbm2ozxED":
+      switch(fileName){
+        case "yellow-rounded-wide.png":
           return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '51%', top: '62%', right: '35%', transform: 'rotate(6.43deg)'}
          
-        case "https://media.graphassets.com/sCh9lnvCQmGifsQG9VNx":
+        case "yellow-half-shredded.png":
           return {paddingTop: 'calc(1 / 2.23 * 100%)', width: '80%', top: '50%', right: '15%', transform: 'rotate(-3.52deg)'}
 
-        case "https://media.graphassets.com/PjSn4BjqRtCVLTZS2b1g":
+        case  "yellow-small-torn.png":
           return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '51%', top: '58%', right: '30%', transform: 'rotate(8.39deg)'}
 
-        case "https://media.graphassets.com/xgiGpwXSVWrXr2zclQeg":
+        case "tanish-rounded-half.png":
           return {paddingTop: 'calc(1 / 2.12 * 100%)', width: '59%', top: '50%', right: '13%', transform: 'rotate(0deg)'}
       }
     }
 
     const labelStyles = {
-      container: (url) => ({
+      container: (url, fileName) => ({
       backgroundImage: `url(${url})`,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'bottom',
@@ -76,17 +76,17 @@ export function HomeGallery (props){
       right: '9%',
       bottom: '5%',
       height: '0',
-      paddingTop: getLabelVariableStyles(url).paddingTop,
-      width: getLabelVariableStyles(url).width
+      paddingTop: getLabelVariableStyles(fileName).paddingTop,
+      width: getLabelVariableStyles(fileName).width
       })
     }
 
     const textStyles = {
-      container: (url) => ({
+      container: (fileName) => ({
       position: 'absolute',
-      top: getLabelVariableStyles(url).top,
-      right: getLabelVariableStyles(url).right,
-      transform: getLabelVariableStyles(url).transform,
+      top: getLabelVariableStyles(fileName).top,
+      right: getLabelVariableStyles(fileName).right,
+      transform: getLabelVariableStyles(fileName).transform,
       color: 'black',
       fontFamily: 'flood-std',
       fontSize: width >= desktopBreakpoint ? '40px' : width >= tabletBreakpoint ? '3.8vw' : '7.8vw',
@@ -98,8 +98,8 @@ export function HomeGallery (props){
 
     return(  
         <ul style={galleryStyles}>
-          {props.artists.map(({images, slug, nameLabel, name}, index) =>{
-            return <Link key={index} style={linkStyles} to={slug}><div style={aspectRatioBox}><div className="effectHoverContainer"><div style={width >= tabletBreakpoint ? aspectRatioBoxInsideStyles.container(images[0].url) : aspectRatioBoxInsideStyles.container(images[1].url)}></div><div style={labelStyles.container(nameLabel)}><div id="effectContainer"></div><p style={textStyles.container(nameLabel)}>{name}</p></div></div></div></Link>
+          {props.artists.map(({artistImages, slug, nameLabel, name, fileName}, index) =>{
+            return <Link key={index} style={linkStyles} to={slug}><div style={aspectRatioBox}><div className="effectHoverContainer"><div style={width >= tabletBreakpoint ? aspectRatioBoxInsideStyles.container(artistImages[0].url) : aspectRatioBoxInsideStyles.container(artistImages[1].url)}></div><div style={labelStyles.container(nameLabel, fileName)}><div id="effectContainer"></div><p style={textStyles.container(fileName)}>{name}</p></div></div></div></Link>
           })}
         </ul>
     )

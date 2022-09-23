@@ -31,7 +31,17 @@ export function Footer (props){
       }
 
       const captionStyles = {
-        color: '#333333'
+        color: '#333333',
+        lineHeight: '1.25rem'
+      }
+
+      const captionContainerStyles = {
+        display: 'flex',
+        alignItems: 'flex-end'
+      }
+
+      const breakStyles = {
+        display: width <= mobileBreakpoint ? 'block' : 'none'
       }
 
     return(
@@ -44,8 +54,9 @@ export function Footer (props){
                         <a href='https://instagram.com/ParkasComedy' style={linkStyles} target="_blank"><FontAwesomeIcon icon={ faInstagram }/></a>
                     </div>
                 </div>
-                <p style={captionStyles}>©2022 / Parkas / <br />
-                    All rights reserved</p>
+                <div style={captionContainerStyles}>
+                  <p style={captionStyles}>©2022 / Parkas / <br style={breakStyles}/> All rights reserved</p>
+                </div>
             </div>
         </div>
     )
