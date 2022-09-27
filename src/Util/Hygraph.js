@@ -48,19 +48,6 @@ try{
 
 }
 
-/*export async function getNameLabels(onSuccess){
-  const query = gql`
-  query nameLabels {
-    homePage (where: {id: "cl7q351fzdxi30bmmr89fa1kw"}){
-      nameLabels{
-        url
-      }
-    }
-  }`
-  const data = await graphQLClient.request(query);
-  onSuccess(data.homePage.nameLabels);
-}*/
-
 export async function getArtists(onSuccess){
 
   const query = gql`
@@ -101,6 +88,9 @@ export async function getBio(slugObj, onSuccess){
          id
          url
        }
+       bioGlassGraphic{
+        url
+      }
        artistDescription
        credits
        quotes
@@ -143,7 +133,7 @@ export async function getEyesGraphic(onSuccess){
   onSuccess(data.asset.url);
 }
 
-export async function getBioBackgroundTop(onSuccess){
+/*export async function getBioBackgroundTop(onSuccess){
   const query = gql`
   query bioBackgroundTop {
     bioBackgroundTop (where: {id: "cl7ua3hm50sae0cjq0qkhsktj"}){
@@ -154,7 +144,7 @@ export async function getBioBackgroundTop(onSuccess){
   }`
   const data = await graphQLClient.request(query);
   onSuccess(data.bioBackgroundTop.bioBackground);
-}
+}*/
 
 export async function getDiscoverSticker(onSuccess){
   const query = gql`

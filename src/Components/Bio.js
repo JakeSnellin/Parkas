@@ -50,7 +50,7 @@ export function Bio (props){
             <div className="app-outer-wrapper">
                 <BioHeader closeButton={props.closeButton}/>
                 <BioImage images={data.artists[0].bio.bioImage}/>
-                <BioBackgroundTop name={data.artists[0].bio.name} socialMediaLinks={data.artists[0].bio.socialMediaLinks}/>
+                <BioBackgroundTop glassGraphic={data.artists[0].bio.bioGlassGraphic} name={data.artists[0].bio.name} socialMediaLinks={data.artists[0].bio.socialMediaLinks}/>
                 <div style={innerWrapper}>
                     <About description={data.artists[0].bio.artistDescription}/>
                 </div>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { useState } from "react";
-import { getBioBackgroundTop } from "../Util/Hygraph";
+//import { getBioBackgroundTop } from "../Util/Hygraph";
 import { useViewport } from "../Util/CustomHooks";
 import { BioTitle } from "./BioTitle";
 import { SocialMediaLinks } from "./SocialMediaLinks";
@@ -9,13 +9,11 @@ export function BioBackgroundTop (props){
 
     const { width } = useViewport();
 
-    const mobileBreakpoint = 576;
-
     const tabletBreakpoint = 768;
 
     const desktopBreakpoint = 1400;
 
-    const [bioBackground, setBioBackground] = useState(null);
+    /*const [bioBackground, setBioBackground] = useState(null);
 
     useEffect(() =>{
         getBioBackgroundTop(setBioBackground);
@@ -23,7 +21,7 @@ export function BioBackgroundTop (props){
 
     if(!bioBackground){
         return null;
-    }
+    }*/
     
     const backgroundContainerStyles ={
         container: (url) => ({
@@ -41,7 +39,7 @@ export function BioBackgroundTop (props){
 
     return (
 
-        <div style={width >= desktopBreakpoint ? null : width >= tabletBreakpoint ? backgroundContainerStyles.container(bioBackground[0].url) : backgroundContainerStyles.container(bioBackground[1].url)}>
+        <div style={width >= desktopBreakpoint ? null : width >= tabletBreakpoint ? backgroundContainerStyles.container(props.glassGraphic[0].url) : backgroundContainerStyles.container(props.glassGraphic[1].url)}>
             
             <div><BioTitle name={props.name}/><SocialMediaLinks socialMediaLinks={props.socialMediaLinks}/></div>
 

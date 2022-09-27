@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useViewport } from "../Util/CustomHooks";
-import { useEffect, useState } from 'react';
-import { TabletGraphic } from './TabletGraphic';
 
 export function HomeGallery (props){
 

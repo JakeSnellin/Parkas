@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { getBioImages } from "../Util/Hygraph";
+import React from 'react';
 import { useViewport } from "../Util/CustomHooks";
 import { DiscoverSticker } from "./DiscoverSticker";
 import { ScrollSticker } from "./ScrollSticker";
@@ -12,21 +11,7 @@ export function BioImage (props){
 
     const desktopBreakpoint = 1400;
 
-    //const [images, setImages] = useState(null);
-
     const { width } = useViewport();
-
-    /*useEffect(()=>{
-        getBioImages({
-            variables: {
-                slug: props.slug
-            }},setImages);
-    },[])*/
-
-    /*if(!images){
-        console.log('no images')
-        return null;
-    }*/
 
     const bioImageContainer = {
         backgroundImage: width >= desktopBreakpoint ? `url(${props.images[2].url})` : width >= tabletBreakpoint ? `url(${props.images[1].url})` : `url(${props.images[0].url})`,

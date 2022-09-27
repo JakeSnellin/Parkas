@@ -7,7 +7,6 @@ import { useViewport } from "../Util/CustomHooks";
 import { useState } from 'react';
 import { getlinksBackground } from '../Util/Hygraph';
 import { useEffect } from 'react';
-import { faRotate } from '@fortawesome/free-solid-svg-icons';
 
 export function SocialMediaLinks (props){
 
