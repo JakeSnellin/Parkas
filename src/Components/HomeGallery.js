@@ -1,8 +1,8 @@
-import { faRotate } from "@fortawesome/free-solid-svg-icons";
-import React, { createRef } from "react"
-import { Link, Redirect } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { useViewport } from "../Util/CustomHooks";
-import { useEffect } from "react";
+import { useEffect, useState } from 'react';
+import { TabletGraphic } from './TabletGraphic';
 
 export function HomeGallery (props){
 
@@ -115,7 +115,7 @@ export function HomeGallery (props){
     return(  
         <ul style={galleryStyles}>
           {props.artists.map(({artistImages, slug, pngNameLabel, name, pngFileName, gifNameLabel, gifFileName}, index) =>{
-            return <Link key={index} style={linkStyles} to={slug}><div className="image-container" style={aspectRatioBox}><div style={width >= tabletBreakpoint ? aspectRatioBoxInsideStyles.container(artistImages[0].url) : aspectRatioBoxInsideStyles.container(artistImages[1].url)}></div><div className="static-label" style={labelStyles.container(pngNameLabel, pngFileName)}><p style={textStyles.container(pngFileName)}>{name}</p></div><div style={gifContainerStyles.container(gifNameLabel, gifFileName)}><p style={textStyles.container(pngFileName)}>{name}</p></div></div></Link>
+            return <Link key={index} style={linkStyles} to={slug}><div className="image-container" style={aspectRatioBox}><div style={width >= tabletBreakpoint ? aspectRatioBoxInsideStyles.container(artistImages[0].url) : aspectRatioBoxInsideStyles.container(artistImages[1].url)}></div>{width >= tabletBreakpoint ? <div className="static-label" style={labelStyles.container(pngNameLabel, pngFileName)}><p style={textStyles.container(pngFileName)}>{name}</p></div> : null} <div style={gifContainerStyles.container(gifNameLabel, gifFileName)}><p style={textStyles.container(pngFileName)}>{name}</p></div></div></Link>
           })}
         </ul>
     )
