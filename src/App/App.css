@@ -246,4 +246,6 @@ h1, h2{
     width: 100%;
 }
 
-
+.image-container:hover .static-label{
+    opacity: 0;
+}

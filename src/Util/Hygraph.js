@@ -82,9 +82,11 @@ export async function getArtists(onSuccess){
   onSuccess(data.artists.map((artist) => ({
     artistImages: artist.artistImage,
     slug: artist.slug,
-    nameLabel: artist.nameLabel[0].url,
+    pngNameLabel: artist.nameLabel[1].url,
     name: artist.name,
-    fileName: artist.nameLabel[0].fileName
+    pngFileName: artist.nameLabel[1].fileName,
+    gifNameLabel: artist.nameLabel[0].url,
+    gifFileName: artist.nameLabel[0].fileName
   })))
 }
 
