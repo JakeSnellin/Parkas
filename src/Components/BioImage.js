@@ -1,11 +1,9 @@
 import React from 'react';
 import { useViewport } from "../Util/CustomHooks";
-import { DiscoverSticker } from "./DiscoverSticker";
+import { NewsSticker } from "./NewsSticker";
 import { ScrollSticker } from "./ScrollSticker";
 
 export function BioImage (props){
-
-    const mobileBreakpoint = 576;
 
     const tabletBreakpoint = 768;
 
@@ -33,7 +31,7 @@ export function BioImage (props){
     return (
 
         <div style={imageFlexContainer}>
-            {width >= desktopBreakpoint ? <div style={bioImageContainer}><DiscoverSticker /><ScrollSticker /></div> : width >= tabletBreakpoint ? <div style={bioImageContainer}><DiscoverSticker /></div> : <div style={bioImageContainer}></div>}
+            {width >= desktopBreakpoint ? <div style={bioImageContainer}><NewsSticker newsSticker={props.newsSticker} /><ScrollSticker scrollSticker={props.scrollSticker}/></div> : width >= tabletBreakpoint ? <div style={bioImageContainer}><NewsSticker newsSticker={props.newsSticker}/></div> : <div style={bioImageContainer}></div>}
         </div>
     )
 }

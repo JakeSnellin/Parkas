@@ -1,20 +1,12 @@
 import React from "react";
-import { useEffect } from "react";
 import { useViewport } from "../Util/CustomHooks";
-import { useState } from "react";
-import { getDiscoverSticker } from "../Util/Hygraph";
 
-export function DiscoverSticker (props){
+
+export function NewsSticker (props){
 
     const { width } = useViewport();
 
     const desktopBreakpoint = 1400;
-
-    const [sticker, setSticker] = useState('');
-
-    useEffect(()=>{
-        getDiscoverSticker(setSticker);
-    },[])
 
     const linkStyles = {
         display: 'block',
@@ -23,7 +15,7 @@ export function DiscoverSticker (props){
     }
 
      const discoverStickerStyles = {
-        backgroundImage: `url(${sticker})`,
+        backgroundImage: `url(${props.newsSticker})`,
         width: width >= desktopBreakpoint ? '229px' : '203.34px',
         height: width >= desktopBreakpoint ? '236px' : '210.19px',
         backgroundSize: 'cover',

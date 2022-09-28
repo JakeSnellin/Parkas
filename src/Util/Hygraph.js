@@ -91,6 +91,12 @@ export async function getBio(slugObj, onSuccess){
        bioGlassGraphic{
         url
       }
+      newsSticker{
+        url
+      }
+      scrollSticker{
+        url
+      }
        artistDescription
        credits
        quotes
@@ -133,23 +139,10 @@ export async function getEyesGraphic(onSuccess){
   onSuccess(data.asset.url);
 }
 
-/*export async function getBioBackgroundTop(onSuccess){
-  const query = gql`
-  query bioBackgroundTop {
-    bioBackgroundTop (where: {id: "cl7ua3hm50sae0cjq0qkhsktj"}){
-      bioBackground{
-        url
-      }
-    }
-  }`
-  const data = await graphQLClient.request(query);
-  onSuccess(data.bioBackgroundTop.bioBackground);
-}*/
-
-export async function getDiscoverSticker(onSuccess){
+/*export async function getDiscoverSticker(onSuccess){
   const query = gql`
   query sticker {
-    asset (where: {id: "cl7ucxz1p0v3q0dml9hkz5kzw"}){
+    asset (where: {id: "cl8lidn8xlczu0amjcfbeao00"}){
         url
     }
   }`
@@ -161,14 +154,14 @@ export async function getDiscoverSticker(onSuccess){
 export async function getScrollSticker(onSuccess){
   const query = gql`
   query scrollSticker {
-    asset (where: {id: "cl81rl0yy1oxh0blcbx1llqk0"}) {
+    asset (where: {id: "cl8lgzx9vk6oi0cmq3526axvs"}) {
        url
    }
  }`
 
   const data = await graphQLClient.request(query);
   onSuccess(data.asset.url);
-} 
+}*/
 
 export async function getTabletGraphic(onSuccess){
   const query = gql`
