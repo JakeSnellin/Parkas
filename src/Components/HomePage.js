@@ -5,6 +5,7 @@ import { HomeGallery } from "./HomeGallery";
 import { useEffect } from "react";
 import { useViewport } from "../Util/CustomHooks";
 import { Footer } from "./Footer";
+import { FooterGraphic } from "./FooterGraphic";
 
 
 export function HomePage (props){
@@ -36,6 +37,7 @@ export function HomePage (props){
                 <div style={innerWrapper}>
                     <Footer icon={props.icon}/>
                 </div>
+                <FooterGraphic />
             </div>
     )
 }

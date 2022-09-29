@@ -13,6 +13,7 @@ import { Footer } from "./Footer";
 import { EyesGraphic } from "./EyesGraphic";
 import { Credits } from "./Credits";
 import { TabletGraphic } from "./TabletGraphic";
+import { FooterGraphic } from "./FooterGraphic";
 
 export function Bio (props){
 
@@ -64,6 +65,7 @@ export function Bio (props){
                     <BioGallery galleryImages={data.artists[0].bio.galleryImage}/>
                     <Footer icon={props.icon}/>
                 </div>
+                    <FooterGraphic />
             </div>
         </div>
     )

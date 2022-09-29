@@ -50,16 +50,16 @@ export function HomeGallery (props){
 
       switch(fileName){
         case `yellow-rounded-wide.${fileType}`:
-          return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '51%', top: '62%', right: '35%', transform: 'rotate(6.43deg)'}
+          return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '51%', top: '59%', right: '35%', transform: 'rotate(6.43deg)'}
          
         case `yellow-half-shredded.${fileType}`:
           return {paddingTop: 'calc(1 / 2.23 * 100%)', width: '80%', top: '50%', right: '20%', transform: 'rotate(-3.52deg)'}
 
         case  `yellow-small-torn.${fileType}`:
-          return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '51%', top: '58%', right: '30%', transform: 'rotate(8.39deg)'}
+          return {paddingTop: 'calc(1 / 1.68 * 100%)', width: '51%', top: '57%', right: '30%', transform: 'rotate(8.39deg)'}
 
         case `tanish-rounded-half.${fileType}`:
-          return {paddingTop: 'calc(1 / 2.12 * 100%)', width: '59%', top: '50%', right: '13%', transform: 'rotate(0deg)'}
+          return {paddingTop: 'calc(1 / 2.12 * 100%)', width: '59%', top: '50%', right: '9%', transform: 'rotate(0deg)'}
       }
     }
 
