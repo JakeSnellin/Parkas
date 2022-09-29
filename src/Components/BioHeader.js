@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import React from "react"
 import { useViewport } from "../Util/CustomHooks";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 
 export function BioHeader (props){
@@ -23,7 +23,7 @@ export function BioHeader (props){
         padding: width >= tabletBreakpoint ? '10.5px 20px' : '8px 12px'
     }
 
-    const instaIconLink = {
+    const iconLink = {
         fontSize: width >= desktopBreakpoint ? '26px' : '20px',
         display: 'block',
         height: '100%',
@@ -41,13 +41,18 @@ export function BioHeader (props){
         display: 'block',
     }
 
+    const iconContainerStyles = {
+        display: 'flex'
+    }
+
     return(
         <div>
             <div>
                 <div style={bioHeaderContainerStyles}>
                     <Link to="/" style={closeButtonStyles}></Link>
-                    <div>
-                        <a style={instaIconLink}href='https://instagram.com/ParkasComedy' target="_blank"><FontAwesomeIcon icon={ faInstagram }/></a>
+                    <div style={iconContainerStyles}>
+                        <a className="twitter-icon-bio" style={iconLink}href='https://twitter.com/ParkasComedy' target="_blank"><FontAwesomeIcon icon={ faTwitter }/></a>
+                        <a style={iconLink}href='https://instagram.com/ParkasComedy' target="_blank"><FontAwesomeIcon icon={ faInstagram }/></a>
                     </div>
                 </div>
             </div>

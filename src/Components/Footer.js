@@ -59,11 +59,6 @@ export function Footer (props){
         color: '#333333'
       }
 
-      const graphicContainerStyles = {
-        width: '100%',
-        height: '82px'
-      }
-
     return(
         <div>
             <div style={footerContainerStyles}>
