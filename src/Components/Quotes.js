@@ -30,7 +30,8 @@ export function Quotes (props){
     }
 
     const quoteContainer = {
-        margin: '100px 0'
+        marginBottom: width >= desktopBreakpoint ? '150px' : width >= tabletBreakpoint ? '135px' : '105px',
+        marginTop: '0',
     }
 
     return(

@@ -14,7 +14,7 @@ export function SubHeader (props) {
         marginBottom: width >= desktopBreakpoint ? '36px' : width >= tabletBreakpoint ? '28px' : '21px',  
         letterSpacing: '1%',
         lineHeight: '79%',
-        fontFamily: 'roc-grotesk',
+        fontFamily: 'roc-grotesk-wide',
         fontStyle: 'normal',
         fontWeight: '750'
     }

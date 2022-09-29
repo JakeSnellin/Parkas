@@ -16,13 +16,14 @@ export function About (props){
         lineHeight: width >= desktopBreakpoint ? '53px' : width >= tabletBreakpoint ? '30px': '24px',
         letterSpacing: '1px', 
         color: '#000000',
-        marginBottom: width >= desktopBreakpoint ? '50px' : width >= tabletBreakpoint ? '35px' : '25px'
+        marginBottom: width >= desktopBreakpoint ? '50px' : width >= tabletBreakpoint ? '35px' : '25px',
+        padding: '8px 0'
     }
 
     const aboutContainerStyles ={
         width: '100%',
         marginTop: width >= desktopBreakpoint ? '131px' : width >= tabletBreakpoint ? '90px' : '70px',
-        marginBottom: width >= desktopBreakpoint ? '150px' : width >= tabletBreakpoint ? '135px' : '105px'
+        marginBottom: width >= desktopBreakpoint ? '150px' : width >= tabletBreakpoint ? '135px' : '105px',
     }
 
     return (

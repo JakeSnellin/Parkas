@@ -19,11 +19,12 @@ export function Credits (props){
         marginBottom: width > desktopBreakpoint ? '52px' : width >= tabletBreakpoint ? '32px' : '26px',
         fontFamily: 'roc-grotesk',
         fontStyle: 'normal',
-        fontWeight: '400'
+        fontWeight: '400',
+        padding: '8px 0'
     }
 
     const creditsContainerStyles = {
-        marginBottom: width >= desktopBreakpoint ? '150px' : width >= tabletBreakpoint ? '110px' : '87px'
+        marginBottom: width >= desktopBreakpoint ? '150px' : width >= tabletBreakpoint ? '135px' : '105px',
     }
 
     return (
