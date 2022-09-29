@@ -12,23 +12,26 @@ export function About (props){
 
     const aboutTextStyles = {
         maxWidth: width >= desktopBreakpoint ? '715px' : width >= tabletBreakpoint ? '461px' : '100%',
-        fontSize: width >= desktopBreakpoint ? '36px' : width >= tabletBreakpoint ? '21px' : '18px',
-        lineHeight: width >= desktopBreakpoint ? '55px' : width >= tabletBreakpoint ? '32px': '24px',
+        fontSize: width >= desktopBreakpoint ? '32px' : width >= tabletBreakpoint ? '21px' : '18px',
+        lineHeight: width >= desktopBreakpoint ? '53px' : width >= tabletBreakpoint ? '30px': '24px',
         letterSpacing: '1px', 
-        color: '#333333',
-        marginBottom: '100px'
+        color: '#000000',
+        marginBottom: width >= desktopBreakpoint ? '50px' : width >= tabletBreakpoint ? '35px' : '25px'
     }
 
     const aboutContainerStyles ={
         width: '100%',
-        marginTop: width >= desktopBreakpoint ? '131px' : width >= tabletBreakpoint ? '90px' : '70px'
+        marginTop: width >= desktopBreakpoint ? '131px' : width >= tabletBreakpoint ? '90px' : '70px',
+        marginBottom: width >= desktopBreakpoint ? '150px' : width >= tabletBreakpoint ? '135px' : '105px'
     }
 
     return (
 
         <div style={aboutContainerStyles}>
             <SubHeader subHeading={'ABOUT'}/>
-            <p style={aboutTextStyles}>{props.description}</p>
+            {props.description.map((text, index)=>{
+                return <p key={index} style={aboutTextStyles}>{text}</p>
+            })}
         </div>
     )
 }

@@ -46,7 +46,7 @@ h1, h2{
     margin-bottom: 20px;
 }
 
-.home-insta-icon-container{
+.home-icon-container{
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -54,9 +54,13 @@ h1, h2{
     width: 100%;
 }
 
-.insta-icon-home{
+.insta-icon-home, .twitter-icon-home{
     font-size: 2rem;
     color: black;
+}
+
+.twitter-icon-home{
+    margin-right: 2rem;
 }
 
 .icon-container{

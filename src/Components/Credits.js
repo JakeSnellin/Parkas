@@ -11,19 +11,28 @@ export function Credits (props){
     const { width } = useViewport();
 
     const creditTextStyles = {
-        width: width >= desktopBreakpoint ? '682px' : width >= tabletBreakpoint ? '555px' : '100%',
+        width: width >= desktopBreakpoint ? '682px' : width >= tabletBreakpoint ? '555px' : '80%',
         fontSize: width >= desktopBreakpoint ? '36px' : width >= tabletBreakpoint ? '21px' : '18px',
         lineHeight: width >= desktopBreakpoint ? '55px' : width >= tabletBreakpoint ? '27px': '26px',
         letterSpacing: '1px', 
-        color: '#333333',
-        marginBottom: '100px'
+        color: '#000000',
+        marginBottom: width > desktopBreakpoint ? '52px' : width >= tabletBreakpoint ? '32px' : '26px',
+        fontFamily: 'roc-grotesk',
+        fontStyle: 'normal',
+        fontWeight: '400'
+    }
+
+    const creditsContainerStyles = {
+        marginBottom: width >= desktopBreakpoint ? '150px' : width >= tabletBreakpoint ? '110px' : '87px'
     }
 
     return (
         
-        <div>
+        <div style={creditsContainerStyles}>
             <SubHeader subHeading={'CREDITS'}/>
-            <p style={creditTextStyles}>{props.credits}</p>
+            {props.credits.map((text, index)=>{
+                return <p key={index} style={creditTextStyles}>{text}</p>
+            })}
         </div>
     )
 }

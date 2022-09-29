@@ -15,7 +15,8 @@ export function Quotes (props){
         fontFamily: 'roc-grotesk',
         fontStyle: 'normal',
         fontWeight: '750', 
-        marginBottom: '29px'
+        marginBottom: '29px',
+        color: '#000000'
     }
 
     const sourceStyle = {
@@ -24,7 +25,8 @@ export function Quotes (props){
         fontFamily: 'roc-grotesk',
         fontStyle: 'normal',
         fontWeight: '400',
-        marginBottom: '72px'
+        marginBottom: width >= desktopBreakpoint ? '72px' : '52px',
+        color: '#000000'
     }
 
     const quoteContainer = {
