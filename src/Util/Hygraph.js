@@ -52,7 +52,7 @@ export async function getArtists(onSuccess){
 
   const query = gql`
   query artists {
-    artists{
+    artists(orderBy: name_ASC){
       slug
       name
       nameLabel {
