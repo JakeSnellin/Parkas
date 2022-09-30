@@ -16,7 +16,7 @@ export function Credits (props){
         lineHeight: width >= desktopBreakpoint ? '55px' : width >= tabletBreakpoint ? '27px': '26px',
         letterSpacing: '1px', 
         color: '#000000',
-        marginBottom: width > desktopBreakpoint ? '48px' : width >= tabletBreakpoint ? '24px' : '12px',
+        marginBottom: width > desktopBreakpoint ? '38px' : width >= tabletBreakpoint ? '20px' : '8px',
         fontFamily: 'roc-grotesk',
         fontStyle: 'normal',
         fontWeight: '400',

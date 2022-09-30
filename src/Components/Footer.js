@@ -10,6 +10,8 @@ export function Footer (props){
 
     const mobileBreakpoint = 576;
 
+    const tabletBreakpoint = 768;
+
       const footerContainerStyles = {
         display: 'flex',
         flexDirection: 'column',
@@ -37,7 +39,7 @@ export function Footer (props){
         lineHeight: '1.25rem',
         fontSize: '0.75rem',
         alignItems: 'flex-end',
-        fontSize: '10px',
+        fontSize: width <= tabletBreakpoint ? '10px' : '12px',
         lineHeight: '13px'
       }
 
@@ -50,7 +52,7 @@ export function Footer (props){
       }
 
       const siteCreditStyles = {
-        maxWidth:'142px',
+        maxWidth: width <= tabletBreakpoint ? '142px' : '162px',
         textAlign: 'left',
         color: '#333333'
       }
