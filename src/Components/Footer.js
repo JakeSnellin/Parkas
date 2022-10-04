@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 import { useViewport } from '../Util/CustomHooks';
@@ -36,11 +35,9 @@ export function Footer (props){
       const captionContainerStyles = {
         display: 'flex',
         justifyContent: 'space-between',
-        lineHeight: '1.25rem',
-        fontSize: '0.75rem',
+        lineHeight: '1rem',
         alignItems: 'flex-end',
         fontSize: width <= tabletBreakpoint ? '10px' : '12px',
-        lineHeight: '13px'
       }
 
       const breakStyles = {
@@ -54,10 +51,15 @@ export function Footer (props){
       const siteCreditStyles = {
         maxWidth: width <= tabletBreakpoint ? '142px' : '162px',
         textAlign: 'left',
-        color: '#333333'
+        color: '#333333',
       }
 
       const captionStyles = {
+        color: '#333333'
+      }
+
+      const emailStyles = {
+        textDecoration: 'none',
         color: '#333333'
       }
 
@@ -67,16 +69,16 @@ export function Footer (props){
               <div style={iconPairStyles}>
                 <div className='icon-container' style={{backgroundImage: `url(${props.icon})`}}></div>
                     <div>
-                        <a href='https://twitter.com/ParkasComedy' style={linkStyles} target="_blank"><FontAwesomeIcon icon={ faTwitter }/></a>
-                        <a href='https://instagram.com/ParkasComedy' style={linkStyles} target="_blank"><FontAwesomeIcon icon={ faInstagram }/></a>
+                        <a href='https://twitter.com/ParkasComedy' style={linkStyles} target="_blank" rel="noreferrer" ><FontAwesomeIcon icon={ faTwitter }/></a>
+                        <a href='https://instagram.com/ParkasComedy' style={linkStyles} target="_blank" rel="noreferrer" ><FontAwesomeIcon icon={ faInstagram }/></a>
                     </div>
                 </div>
                 <div>
-                  <p style={contactInfoStyles}>hannah@parkascomedy.com</p>
+                  <p style={contactInfoStyles}><a style={emailStyles} href="mailto:hannah@parkascomedy.com">hannah@parkascomedy.com</a></p>
                   <p style={contactInfoStyles}>07746011834</p>
                 </div>
                 <div style={captionContainerStyles}>
-                <p style={siteCreditStyles}>Site created by Jake Snellin and Michael Julings</p><p style={captionStyles}>©2022 / Parkas / <br style={breakStyles}/> All rights reserved</p> 
+                <p style={siteCreditStyles}>Site created by <a style={emailStyles} href="mailto:jake_snellin@hotmail.co.uk">Jake Snellin</a> and <a style={emailStyles} href="mailto:michael@julings.com">Michael Julings</a></p><p style={captionStyles}>©2022 / Parkas / <br style={breakStyles}/> All rights reserved</p> 
                 </div>
             </div>
         </div>

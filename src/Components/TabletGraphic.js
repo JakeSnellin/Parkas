@@ -21,6 +21,7 @@ export function TabletGraphic (){
     const imageStyles = {
         container: (url) => ({
             backgroundImage: `url(${url})`,
+            marginBottom: '135px',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
