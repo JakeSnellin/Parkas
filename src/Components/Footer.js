@@ -45,6 +45,7 @@ export function Footer (props){
       }
 
       const contactInfoStyles = {
+        color: '#333333',
         padding: '10px 0'
       }
 
