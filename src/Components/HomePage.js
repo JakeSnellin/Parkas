@@ -26,6 +26,10 @@ export function HomePage (props){
 
     if(!artists){
         return null;
+    }else{
+        artists.forEach(artist => {
+            console.log(artist);
+        });
     }
 
     return(
